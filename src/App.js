@@ -15,11 +15,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Particles>
+        <Particles />
         <Switch>
           <Route exact path = '/' component = { Home } key = { Home.name } />
         </Switch>
-        </Particles>
       </Router>
     </div>
   );
