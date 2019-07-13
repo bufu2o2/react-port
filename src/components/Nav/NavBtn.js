@@ -1,5 +1,5 @@
 import React, {} from 'react';
-
+import { BrowserRouter as Link } from 'react-router-dom';
 
 
 
@@ -15,11 +15,13 @@ const NavBtn = props => {
 
     return (
         <div>
-            <a title = {props.name} href={props.url}>
+            <div>
+                <a href='/react-port'>
                 <span>
                     {props.name}
                 </span>
-            </a>
+                </a>
+            </div>
         </div>
     )
 }

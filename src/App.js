@@ -1,6 +1,7 @@
 import React, {} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+
 //Page Import ============================================================================
 import Home from './components/Pages/Home';
 
@@ -22,6 +23,7 @@ function App() {
         
         <Switch>
           <Route exact path = '/' component = { Home } key = { Home.name } />
+          <Route exact path = '/react-port/' component = { Home } key = { Home.name } />
         </Switch>
       </Router>
     </div>
