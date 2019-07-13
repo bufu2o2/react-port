@@ -19,7 +19,7 @@ const Nav = (props) => {
     return (
         <div>
             Jake Huang
-            <NavBtn name='Home' />
+            <NavBtn name='Home' url='/' />
             <NavBtn name='About' />
             <NavBtn name ='Portfolio' />
             <NavBtn name ='Contact' />

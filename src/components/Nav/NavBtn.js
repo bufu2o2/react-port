@@ -15,7 +15,11 @@ const NavBtn = props => {
 
     return (
         <div>
-            {props.name}
+            <a title = {props.name} href={props.url}>
+                <span>
+                    {props.name}
+                </span>
+            </a>
         </div>
     )
 }
