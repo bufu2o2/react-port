@@ -1,13 +1,13 @@
 {
   "particles":{
     "number":{
-      "value":400
+      "value":40
     },
     "color":{
       "value":"#fff"
     },
     "shape":{
-      "type":"circle",
+      "type":"triangle",
       "stroke":{
         "width":1,
         "color":"#ccc"
@@ -17,7 +17,7 @@
       }
     },
     "opacity":{
-      "value":0.5,
+      "value":0.1,
       "random":true,
       "anim":{
         "enable":false,
