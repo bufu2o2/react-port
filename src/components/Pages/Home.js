@@ -12,7 +12,7 @@ const Home = () => {
 
 
     return(
-        <h1>HELLO WORLD</h1>
+        <h1>Home Page</h1>
     )
 }
 
