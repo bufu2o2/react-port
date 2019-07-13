@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-
+//component import ==========================================
+import NavBtn from './NavBtn';
 
 
 
@@ -17,7 +18,11 @@ const Nav = (props) => {
 
     return (
         <div>
-            NavBar
+            Jake Huang
+            <NavBtn name='Home' />
+            <NavBtn name='About' />
+            <NavBtn name ='Portfolio' />
+            <NavBtn name ='Contact' />
         </div>
     )
 }
