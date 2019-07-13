@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/j-icon.ico" />
-    <link rel="apple-touch-icon" sizes='128x128' href="%PUBLIC_URL%/jh_icon.png" />
+    <link rel="apple-touch-icon" sizes='128x128' href="%PUBLIC_URL%/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -12,15 +12,16 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="particles.min.js"></script>
 
     <script>
       setTimeout(() => {
         particlesJS.load('particles-js', 'particles.json', function(){
-        console.log('particles.json loaded...');
-      });
-      }, 2000);
+              console.log('particles.json loaded...');
+            });
+      }, 1000);
+         
 
-    </script>
+      </script>
   </body>
 </html>
