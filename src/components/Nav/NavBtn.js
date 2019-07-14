@@ -1,4 +1,5 @@
-import React, {} from 'react';
+import React, {useContext} from 'react';
+import {PageContext} from '../Contexts/PageContext';
 import { BrowserRouter as Link } from 'react-router-dom';
 
 
@@ -7,7 +8,7 @@ import { BrowserRouter as Link } from 'react-router-dom';
 
 const NavBtn = props => {
 
-
+    const [page, setPage] = useContext(PageContext);
 
 
 
@@ -15,12 +16,10 @@ const NavBtn = props => {
 
     return (
         <div>
-            <div>
-                <a href={props.url}>
+            <div onClick= { () => {setPage(props.name)}} style={{margin: '50px'}}>
                 <span>
                     {props.name}
                 </span>
-                </a>
             </div>
         </div>
     )
