@@ -16,7 +16,7 @@ const NavBtn = props => {
     return (
         <div>
             <div>
-                <a href='/react-port'>
+                <a href={props.url}>
                 <span>
                     {props.name}
                 </span>

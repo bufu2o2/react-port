@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8" >
     <link rel="shortcut icon" href="%PUBLIC_URL%/j-icon.ico" />
     <link rel="apple-touch-icon" sizes='57x57' href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes='60x60' href="%PUBLIC_URL%/apple-touch-icon.png" />
@@ -13,59 +13,22 @@
     <link rel="apple-touch-icon" sizes='144x144' href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes='152x152' href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes='180x180' href="%PUBLIC_URL%/apple-touch-icon.png" />
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <meta name="description" content="Web Portfolio. Front-End &amp; Back-End Software Developer and UI/UX Javascript Specialist.">
+    <meta name="description" content="Web Portfolio. Front-End &amp; Back-End Software Developer and UI/UX Javascript Specialist." />
     <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script src="%PUBLIC_URL%/js/particles.js"></script>
+    <script defer src="%PUBLIC_URL%/js/app.js"></script>
     <title>Jake Huang</title>
-
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // https://github.com/rafrex/spa-github-pages
-      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
-      // ----------------------------------------------------------------------
-      // This script checks to see if a redirect is present in the query string
-      // and converts it back into the correct url and adds it to the
-      // browser's history using window.history.replaceState(...),
-      // which won't cause the browser to attempt to load the new url.
-      // When the single page app is loaded further down in this file,
-      // the correct url will be waiting in the browser's history for
-      // the single page app to route accordingly.
-      (function(l) {
-        if (l.search) {
-          var q = {};
-          l.search.slice(1).split('&').forEach(function(v) {
-            var a = v.split('=');
-            q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
-          });
-          if (q.p !== undefined) {
-            window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + (q.p || '') +
-              (q.q ? ('?' + q.q) : '') +
-              l.hash
-            );
-          }
-        }
-      }(window.location))
-    </script>
-
-    
   </head>
+
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="particles.min.js"></script>
 
-    <script>
-      setTimeout(() => {
-        particlesJS.load('particles-js', 'particles.json', function(){
-              console.log('particles.json loaded...');
-            });
-      }, 1000);
-         
 
-      </script>
   </body>
 </html>

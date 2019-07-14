@@ -17,9 +17,9 @@ const Nav = (props) => {
 
 
     return (
-        <div>
+        <div id = 'navbar'>
             Jake Huang
-            <NavBtn name='Home' url='/' />
+            <NavBtn name='Home' url='/react-port/' />
             <NavBtn name='About' />
             <NavBtn name ='Portfolio' />
             <NavBtn name ='Contact' />

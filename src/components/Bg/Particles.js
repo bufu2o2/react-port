@@ -8,15 +8,11 @@ import './style.css';
 
 const Particles = () => {
 
-        
 
     
 
-
     return(
-        <div id = 'particles-js'>
-
-        </div>
+        <div id = 'particles-js' />
 
 
 
