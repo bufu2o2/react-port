@@ -15,13 +15,11 @@ const NavBtn = props => {
 
 
     return (
-        <div>
-            <div onClick= { () => {setPage(props.name)}} style={{margin: '50px'}}>
+            <div id = 'navBtn' onClick= { () => {setPage(props.name)}} style={{margin: '50px'}}>
                 <span>
                     {props.name}
                 </span>
             </div>
-        </div>
     )
 }
 

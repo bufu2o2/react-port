@@ -49,16 +49,14 @@ const AppComp = () => {
                 </Fragment>
             )
                 break;
-
-
         default:
             break;
     }
 
-
     return(
         <div>
             <h1>{page}</h1>
+            
         </div>
 
     )

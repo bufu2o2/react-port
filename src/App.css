@@ -28,3 +28,16 @@ body a {
 #navbar {
   z-index: 5;
 }
+
+.circleBase {
+  border-radius: 50%;
+}
+
+#navMenuBtn{
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #fff;
+  align-content: center;
+  justify-content: center;
+}
