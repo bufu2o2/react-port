@@ -22,7 +22,7 @@ const Menu = props => {
       display: 'flex',
       flexDirection: 'column',
       background: '#daa520',
-      opacity: 0.5,
+      opacity: 0.95,
       color: '#fafafa',
       transition: 'height 0.3s ease',
       zIndex: 2,
@@ -36,9 +36,7 @@ const Menu = props => {
       flexDirection: 'column',
       justifyContent: 'space-Around',
       alignItems: 'space-around',
-      // margin: '15px',
       opacity: 1,
-      // paddingTop: '3rem',
       background: '#daa520',
     }
   }

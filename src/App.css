@@ -37,6 +37,80 @@ body a {
   justify-content: center;
 }
 
+.pageTitle{
+  font-size: 80px;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
 .pageTransition {
+  
+}
+
+/*Key Frames ==========================================================================*/
+@keyframes rollLeft {
+  0% {
+    transform: translateX(200%) rotate(180deg);
+    /* opacity: 0; */
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    /* opacity: 1; */
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 200%;
+  }
+}
+
+@keyframes tada {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateX(200%) rotate(180deg);
+  }
+  40% {
+    transform: translateX(0) rotate(0deg) translateY(100px);
+  }
+  50%{
+    transform: translateY(100px) ;
+  }
+  70%{
+    transform: translateY(100px) rotate(200deg); 
+    transform-origin: 20%;
+  }
+  /* 75%{
+    transform: translateY(100px) rotate(150deg); 
+    transform-origin: 20%;
+  } */
+  100%{
+    transform: translateY(1000%);
+  }
+}
+
+
+/*Page Specific Styling =================================================================*/
+#hiIntro{
+  text-shadow:
+  2px 2px 2px #33C3F7;
+  
+}
+#welcomeIntro{
+  font-weight: 600;
+  text-align: right;
+  transform: translateY(800%);
   
 }

@@ -25,7 +25,7 @@ const Nav = (props) => {
     const styles= {
       container:{
         position: 'absolute',
-        bottom: '10px',
+        bottom: '30px',
         right: '10px',
         zIndex: '99',
         opacity: 0.9,
