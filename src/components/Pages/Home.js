@@ -12,7 +12,7 @@ const Home = () => {
 
 
     return(
-        <div>
+        <div className = 'pageTransition'>
             <h1>Home Page</h1>
         </div>
     )

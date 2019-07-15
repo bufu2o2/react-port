@@ -7,7 +7,7 @@ const Contact = () => {
 
 
     return (
-        <div>
+        <div className = 'pageTransition'>
             <h1>Contact Page</h1>
         </div>
     )

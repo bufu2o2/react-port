@@ -9,7 +9,7 @@ const Portfolio = () => {
 
 
     return(
-        <div>
+        <div className = 'pageTransition'>
             <h1>Portfolio Page</h1>
         </div>
     )

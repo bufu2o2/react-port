@@ -8,11 +8,6 @@ html, body{
   font-display: fallback;
   font-weight: 400;
 }
-#root{
-  margin-top: -23px;
-  /* background: red; */
-}
-
 body a {
   color: inherit;
   text-decoration: none;
@@ -40,4 +35,8 @@ body a {
   border: 3px solid #fff;
   align-content: center;
   justify-content: center;
+}
+
+.pageTransition {
+  
 }
