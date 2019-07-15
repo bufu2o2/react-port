@@ -6,7 +6,9 @@ html, body{
   font-family: 'Lato', sans-serif;
   font-display: fallback;
   font-weight: 400;
-
+}
+#root{
+  margin-top: -21px;
 }
 
 body a {
@@ -23,10 +25,6 @@ body a {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   z-index: -1;
-}
-
-#navbar {
-  z-index: 5;
 }
 
 .circleBase {

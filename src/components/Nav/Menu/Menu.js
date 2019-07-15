@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 const Menu = props => {
 
 
-console.log('this is menu items in menu    ', props.menuItems)
+// console.log('this is menu items in menu    ', props.menuItems)
 
   const [open, setOpen] = useState(props.open ? props.open : false)
 

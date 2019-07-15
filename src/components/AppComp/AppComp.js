@@ -14,7 +14,7 @@ import {PageContext} from '../Contexts/PageContext';
 const AppComp = () => {
 
     const [page, setPage] = useContext(PageContext);
-    console.log('THIS IS THE PAGE THATS IMPORTING FROM USE CONTEXT ', page )
+    // console.log('THIS IS THE PAGE THATS IMPORTING FROM USE CONTEXT ', page )
 
     switch (page) {
         case 'Home':
@@ -24,7 +24,7 @@ const AppComp = () => {
                 <Home />
                 </Fragment>
             )
-            break;
+
         case 'About':
             return(
                 <Fragment>
@@ -32,7 +32,7 @@ const AppComp = () => {
                 <About />
                 </Fragment>
             )
-            break;
+
         case 'Portfolio':
             return(
                 <Fragment>
@@ -40,7 +40,7 @@ const AppComp = () => {
                 <Portfolio />
                 </Fragment>
             )
-            break;
+
         case 'Contact':
             return(
                 <Fragment>
@@ -48,16 +48,12 @@ const AppComp = () => {
                 <Contact />
                 </Fragment>
             )
-                break;
-        default:
-            break;
     }
 
     return(
-        <div>
+        <Fragment>
             <h1>{page}</h1>
-            
-        </div>
+        </Fragment>
 
     )
 }

@@ -6,9 +6,9 @@ const MenuItem = props => {
   const [page, setPage] = useContext(PageContext)
 
   const handleHover = () => {
-    console.log('handle hover fired')
+    // console.log('handle hover fired')
     setHover(!hover);
-    console.log('this is hover after mouse handler   ', hover)
+    // console.log('this is hover after mouse handler   ', hover)
   }
 
   const styles={
@@ -50,9 +50,7 @@ const MenuItem = props => {
     <div style={styles.container}>
     <div 
       style={styles.menuItem} 
-      onMouseEnter={()=>{
-        console.log('mouse entered')
-        handleHover()}} 
+      onMouseEnter={()=>{handleHover()}} 
       onMouseLeave={()=>{handleHover()}}
       onClick= {() => { setPage(props.val)}}
     >

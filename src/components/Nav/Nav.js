@@ -2,7 +2,6 @@
 import React, {useState} from 'react';
 
 //component import ==========================================
-import NavBtn from './NavBtn';
 import MenuItem from './Menu/MenuItem'
 import Menu from './Menu/Menu';
 import MenuButton from './Menu/MenuBtn';
@@ -54,7 +53,7 @@ const Nav = (props) => {
     }
   const menu = ['Home','About','Portfolio','Contact']
   const menuItems = menu.map((val,index)=> {
-    console.log('this is val inside of the menuitems map      ', val);
+    // console.log('this is val inside of the menuitems map      ', val);
     return (
     
       <MenuItem key={index*3.141592659589} val = {val} index = {index} delay = {index * 0.1}>{val}</MenuItem>
