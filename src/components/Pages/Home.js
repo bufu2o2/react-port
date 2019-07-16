@@ -1,7 +1,6 @@
 import React, {useState, useContext} from 'react';
 import posed from 'react-pose';
 import Intro from '../SVG/Intro';
-import {MenuContext} from '../Contexts/MenuContext';
 
 
 const rnum = constraint => Math.random(Math.floor() * constraint);
@@ -23,7 +22,6 @@ const WelcomeHolder = posed.div({
 const Home = () => {
    
     const [isVisible, setIsVisible] = useState(true);
-    const [side, setSide] = useContext(MenuContext);
     
     return(
         <div className = 'pageTransition'>
@@ -31,7 +29,7 @@ const Home = () => {
                 <IntroHolder className = 'box' pose={isVisible ? 'enter': 'exit'} onClick={()=> {setIsVisible(!isVisible)}} >
                     <Intro /> 
                 </IntroHolder>
-                <WelcomeHolder className = 'wholder' pose={isVisible ? 'enter' : 'exit'} onClick={() => { setSide(!side)}}>
+                <WelcomeHolder className = 'wholder' pose={isVisible ? 'enter' : 'exit'} >
                     Welcome
                 </WelcomeHolder>
             </div>

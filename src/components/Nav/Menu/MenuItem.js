@@ -1,9 +1,11 @@
 import React, {useState, useContext} from 'react';
 import {PageContext} from '../../Contexts/PageContext';
+import {MenuContext} from '../../Contexts/MenuContext';
 
 const MenuItem = props => {
   const [hover, setHover] = useState(false);
   const [page, setPage] = useContext(PageContext)
+  const [isOpen, setIsOpen] = useContext(MenuContext);
 
   const handleHover = () => {
     // console.log('handle hover fired')
@@ -53,7 +55,9 @@ const MenuItem = props => {
       style={styles.menuItem} 
       onMouseEnter={()=>{handleHover()}} 
       onMouseLeave={()=>{handleHover()}}
-      onClick= {() => { setPage(props.val)}}
+      onClick= {() => { 
+        setPage(props.val)
+        setIsOpen(!isOpen)}}
     >
       {props.children}  
     </div>

@@ -6,13 +6,13 @@ export const MenuContext = createContext();
 
 
 //create state ==============================================
-export const MenuSide = props => {
-    const [side, setSide] = useState(true);
+export const MenuOpen = props => {
+    const [isOpen, setIsOpen] = useState(false);
 
 
 
     return (
-        <MenuContext.Provider value = {[side, setSide]}>
+        <MenuContext.Provider value = {[isOpen, setIsOpen]}>
             {props.children}
         </MenuContext.Provider>
     );

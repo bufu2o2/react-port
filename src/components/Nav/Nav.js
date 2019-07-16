@@ -28,15 +28,17 @@ const MenuHolder = posed.div({
 //Component ==================================================
 const Nav = (props) => {
 
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [side, setSide] = useContext(MenuContext);
+    // const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useContext(MenuContext);
 
     const handleMenuClick = () => {
-      setMenuOpen(!menuOpen);
+      setIsOpen(!isOpen);
     }
     
     const handleLinkClick = () => {
-      setMenuOpen(false);
+      console.log('this is menu open before click     ', isOpen);
+      setIsOpen(false);
+      console.log('this is menu open after click     ', isOpen);
     }
   
     const styles= {
@@ -66,7 +68,7 @@ const Nav = (props) => {
         alignContent: 'center',
         width: '100vw',
         height: '100vh',
-        filter: menuOpen ? 'blur(2px)':null,
+        filter: isOpen ? 'blur(2px)':null,
         transition: 'filter 1s ease',
       },
     }
@@ -75,7 +77,7 @@ const Nav = (props) => {
     // console.log('this is val inside of the menuitems map      ', val);
     return (
       <MenuHolder key = {index*3.141592659589}>
-      <MenuItem key={index*3.141592659589} val = {val} index = {index} delay = {index * 0.1}>{val}</MenuItem>
+      <MenuItem key={index*3.141592659589} val = {val} index = {index} onClick={()=>{handleLinkClick();}} delay = {index * 0.1}>{val}</MenuItem>
       </MenuHolder>
       )});
 
@@ -85,10 +87,10 @@ const Nav = (props) => {
         <div>
          
             <div className='circleBase' id = 'navMenuBtn' style={styles.container}>
-                <MenuButton open={menuOpen} onClick={()=>handleMenuClick()} color='white'/>
+                <MenuButton open={isOpen} onClick={()=>handleMenuClick()} color='white'/>
             </div>
        
-            <Menu menuItems = {menuItems} open={menuOpen} onClick={()=>{handleLinkClick();}} />
+            <Menu menuItems = {menuItems} open={isOpen} onClick={()=>{handleLinkClick();}} />
         </div>
 
 
