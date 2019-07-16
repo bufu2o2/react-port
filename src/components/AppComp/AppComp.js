@@ -9,6 +9,8 @@ import Contact from '../Pages/Contact';
 //Other Import ==========================================================================
 import Nav from '../Nav/Nav';
 import {PageContext} from '../Contexts/PageContext';
+// import {Swipe, Position} from 'react-swipe-component';
+import {Swipe, Position} from 'react-swipe-component';
 
 
 const AppComp = () => {
@@ -16,12 +18,13 @@ const AppComp = () => {
     const [page, setPage] = useContext(PageContext);
     // console.log('THIS IS THE PAGE THATS IMPORTING FROM USE CONTEXT ', page )
 
+
     switch (page) {
         case 'Home':
             return(
                 <Fragment>
                 <Nav />
-                <Home />
+                <Home /> 
                 </Fragment>
             )
 
@@ -50,10 +53,13 @@ const AppComp = () => {
             )
     }
 
+
     return(
         <Fragment>
-            <h1>{page}</h1>
+          <h1>{page}</h1>
         </Fragment>
+
+
 
     )
 }
