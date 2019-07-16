@@ -10,7 +10,9 @@
     "react-pose": "^4.0.8",
     "react-pose-text": "^3.1.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-swipeable-views": "^0.13.3",
+    "vue-pose": "^0.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
