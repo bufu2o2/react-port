@@ -1,5 +1,5 @@
 
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 
 //component import ==========================================
 import MenuItem from './Menu/MenuItem'
@@ -91,6 +91,7 @@ const Nav = (props) => {
             <div className='circleBase' id = 'navMenuBtn' style={styles.container}>
                 <MenuButton open={isOpen} onClick={()=>handleMenuClick()} color='white'/>
             </div>
+            
             <Menu menuItems = {menuItems} open={isOpen} onClick={()=>{handleLinkClick();}} />
         </div>
     )

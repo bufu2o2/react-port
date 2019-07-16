@@ -2,9 +2,7 @@ import React, {useState, useContext} from 'react';
 import posed from 'react-pose';
 // import SplitText from 'react-pose-text';
 import Intro from '../Text/Intro';
-import Swiper from '../Swipe/Swipe';
-import {Swipe, Position } from 'react-swipe-component';
-import {PageContext} from '../Contexts/PageContext';
+import Swiper from '../Swipe/Swiper';
 
 
 const rnum = constraint => Math.random(Math.floor() * constraint);
@@ -75,35 +73,10 @@ const WelcomeHolder = posed.div({
 const Home = () => {
    
     const [isVisible, setIsVisible] = useState(true);
-    const [page, setPage] = useContext(PageContext)
     
     return(
       <div className = 'pageTransition'>
-        <Swipe 
-          onSwipe={() => console.log('On Swipe Fired') }
-          onSwipeEnd={() => console.log("Swipe Ended") }
-          onSwipedLeft={ () => {
-            console.log("Swiped left") 
-            setPage('About')
-            } }
-          onSwipedRight = { () => {
-            console.log("Swiped right") 
-            setPage('Portfolio')
-            } }
-          onSwipeUpListener = { () => console.log("Swiped Up") }
-          onSwipeDownListener = { () => console.log("Swiped down") }
-          onSwipeListener = { p => {
-            if (p.x !== 0) {
-              console.log(`Swipe x: ${p.x}`)
-            }
-            if (p.y !== 0) {
-              console.log(`Swipe y: ${p.y}`)
-            }}
-          }
-          
-          >
-          <div id = 'testdiv' >hello world</div>
-          </Swipe>
+        <Swiper swipeLeft = 'About' swipeRight = 'Portfolio' />
             <div className = 'pageTitle'>
                 <IntroHolder className = 'box' pose={isVisible ? 'enter': 'exit'} onClick={()=> {setIsVisible(!isVisible)}} >
                     <Test><Intro /></Test> 
