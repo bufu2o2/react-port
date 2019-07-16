@@ -15,6 +15,7 @@ const MenuItem = props => {
     container: {
       opacity: 0,
       display: 'flex',
+      justifyContent: 'center',
       flexDirection: 'column',
       alignItems: 'center',
       animation: '1s appear forwards',

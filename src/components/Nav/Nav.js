@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 
 //component import ==========================================
 import MenuItem from './Menu/MenuItem'
@@ -8,11 +8,28 @@ import MenuButton from './Menu/MenuBtn';
 
 //stylesheet =============================================
 import './Menu/Menu.css';
+import posed from 'react-pose';
+
+//Context Import =============================================
+import {MenuContext} from '../Contexts/MenuContext';
+
+
+
+//PoseComponent ===============================================
+const MenuHolder = posed.div({
+  // draggable: true,
+      hoverable: true,
+      init: { scale: 1, boxShadow: '0px 0px 0px rgba(0,0,0,0)' },
+      hover: { scale: 1.5, boxShadow: '0px 10px 10px rgba(0,0,0,0.2)' },
+      // drag: { scale: 1.1, boxShadow: '0px 2px 3px rgba(0,0,0,0.1)' }
+})
+
 
 //Component ==================================================
 const Nav = (props) => {
 
     const [menuOpen, setMenuOpen] = useState(false);
+    const [side, setSide] = useContext(MenuContext);
 
     const handleMenuClick = () => {
       setMenuOpen(!menuOpen);
@@ -27,6 +44,7 @@ const Nav = (props) => {
         position: 'absolute',
         bottom: '30px',
         right: '10px',
+        // left: side ? '' : '10px',
         zIndex: '99',
         opacity: 0.9,
         display:'flex',
@@ -35,6 +53,7 @@ const Nav = (props) => {
         // width: '10',
         color: 'white',
         fontFamily:'Lobster',
+        // transform: side ? 'rotate(180deg)' : 'rotate(0deg)'
       },
       logo: {
         margin: '0 auto',
@@ -55,20 +74,21 @@ const Nav = (props) => {
   const menuItems = menu.map((val,index)=> {
     // console.log('this is val inside of the menuitems map      ', val);
     return (
-    
+      <MenuHolder key = {index*3.141592659589}>
       <MenuItem key={index*3.141592659589} val = {val} index = {index} delay = {index * 0.1}>{val}</MenuItem>
+      </MenuHolder>
       )});
 
 
 
     return (
         <div>
+         
             <div className='circleBase' id = 'navMenuBtn' style={styles.container}>
                 <MenuButton open={menuOpen} onClick={()=>handleMenuClick()} color='white'/>
-                {/* <div style={styles.logo}>Logo</div> */}
             </div>
+       
             <Menu menuItems = {menuItems} open={menuOpen} onClick={()=>{handleLinkClick();}} />
-            {/* <div style={styles.body} /> */}
         </div>
 
 

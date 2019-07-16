@@ -4,6 +4,7 @@ import AppComp from './components/AppComp/AppComp';
 //Other Import ==========================================================================
 import Particles from './components/Bg/Particles';
 import {PageName} from './components/Contexts/PageContext';
+import {MenuSide} from './components/Contexts/MenuContext';
 import './App.css';
 
 function App() {
@@ -14,7 +15,9 @@ function App() {
   <div className="App">
     <Particles />
     <PageName>
-      <AppComp />
+      <MenuSide>
+        <AppComp />
+      </MenuSide>
     </PageName>  
   </div>
   );
