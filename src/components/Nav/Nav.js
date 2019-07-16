@@ -24,6 +24,24 @@ const MenuHolder = posed.div({
       // drag: { scale: 1.1, boxShadow: '0px 2px 3px rgba(0,0,0,0.1)' }
 })
 
+const MenuHolder1 = posed.div({
+  hoverable: true,
+  pressable: true,
+  init: {
+    scale: 1,
+    boxShadow: '0px 0px 0px rgba(0,0,0,0)'
+  },
+  hover: {
+    scale: 1.2,
+    boxShadow: '0px 5px 10px rgba(0,0,0,0.2)'
+  },
+  press: {
+    scale: 1.1,
+    boxShadow: '0px 2px 5px rgba(0,0,0,0.1)'
+  }
+});
+
+
 
 //Component ==================================================
 const Nav = (props) => {
@@ -85,15 +103,11 @@ const Nav = (props) => {
 
     return (
         <div>
-         
             <div className='circleBase' id = 'navMenuBtn' style={styles.container}>
                 <MenuButton open={isOpen} onClick={()=>handleMenuClick()} color='white'/>
             </div>
-       
             <Menu menuItems = {menuItems} open={isOpen} onClick={()=>{handleLinkClick();}} />
         </div>
-
-
     )
 }
 

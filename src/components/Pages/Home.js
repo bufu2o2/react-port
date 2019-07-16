@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react';
 import posed from 'react-pose';
 import Intro from '../SVG/Intro';
+import SplitText from 'react-pose-text';
 
 
 const rnum = constraint => Math.random(Math.floor() * constraint);
@@ -17,6 +18,28 @@ const WelcomeHolder = posed.div({
     exit: { y: 1000, opacity: 0, delay: 450},
     transition: {type: 'physics', velocity: 1000},
 })
+const charPoses = {
+    drag: {
+      y: 10,
+      transition: ({ charInWordIndex }) => ({
+        type: 'spring',
+        velocity: 100 * Math.sin(1 + charInWordIndex),
+        damping: 0,
+        scale: 2,
+      })
+    },
+    dragEnd: {
+      y: 100,
+      transition: {
+        type: 'spring',
+        damping: 10,
+        stiffness: 1000
+      }
+    }
+  };
+  const wordPoses = {
+    draggable: true
+  };
 
 
 const Home = () => {
@@ -30,7 +53,7 @@ const Home = () => {
                     <Intro /> 
                 </IntroHolder>
                 <WelcomeHolder className = 'wholder' pose={isVisible ? 'enter' : 'exit'} >
-                    Welcome
+                <SplitText wordPoses={wordPoses} charPoses={charPoses}>Welcome</SplitText>
                 </WelcomeHolder>
             </div>
         </div>
