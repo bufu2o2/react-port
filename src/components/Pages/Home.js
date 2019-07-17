@@ -78,10 +78,10 @@ const Home = () => {
       <div className = 'pageTransition'>
         <Swiper swipeLeft = 'About' swipeRight = 'Portfolio' />
             <div className = 'pageTitle'>
-                <IntroHolder className = 'box' pose={isVisible ? 'enter': 'exit'} onClick={()=> {setIsVisible(!isVisible)}} >
+                <IntroHolder className = 'pointerHover' pose={isVisible ? 'enter': 'exit'} onClick={()=> {setIsVisible(!isVisible)}} >
                     <Test><Intro /></Test> 
                 </IntroHolder>
-                <WelcomeHolder className = 'wholder' pose={isVisible ? 'enter' : 'exit'} >
+                <WelcomeHolder className = 'pointerHover' pose={isVisible ? 'enter' : 'exit'} >
                 {/* <SplitText charPoses={charPoses}>Welcome</SplitText> */}
                 <Test> Welcome </Test>
                 </WelcomeHolder>

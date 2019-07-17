@@ -2,11 +2,13 @@ html, body{
   height: 100%;
   width: 100%;
   overflow: hidden;
+  position: fixed;
   /* background: green; */
   color: white;
   font-family: 'Lato', sans-serif;
   font-display: fallback;
   font-weight: 400;
+  scroll-behavior: 
 }
 body a {
   color: inherit;
@@ -101,17 +103,11 @@ body a {
 
 
 /*Page Specific Styling =================================================================*/
-#hiIntro{
-  text-shadow:
-  2px 2px 2px #33C3F7;
-  
+.pointerHover:hover{
+  cursor: crosshair;
 }
-#welcomeIntro{
-  font-weight: 600;
-  text-align: right;
-  transform: translateY(800%);
-  
-}
+
+
 
 #testdiv {
   position: absolute;
@@ -121,27 +117,80 @@ body a {
   background-color: transparent;
 }
 .navGuide{
-  font-size: 50px;
+  font-size: 20px;
+  color: #33C3F7;
+
 }
 #navGuide-L{ 
   position: absolute;
   top: calc(50% - 25px);
-  left: 10px;
+  left: 20px;
 }
 #navGuide-R{ 
   position: absolute;
   top: calc(50% - 25px);
-  right: 10px;
+  right: 20px;
 }
 #navGuide-U{ 
-  position: absolute;
-  /* width: 100%; */
-  margin: 0 auto;
-  top: 10px;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 20px;
 }
 #navGuide-D{ 
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  bottom: 20px;
+}
+
+
+/* Making Arrows =============================================== */
+.arrowBtn{
+  position: relative;
+}
+i{
+  border: solid;
+  border-width: 0 5px 5px 0;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+}
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+#l div{
   position: absolute;
-  display: flex;
-  align-content: center;
-  bottom: 10px;
+  top: calc(50% - 10px);
+  left: 15px;
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+#r div{
+  position: absolute;
+  top: calc(50% - 13px);
+  right: 15px;
+}
+.up{
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+#u div{
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  text-align: center;
+}
+.down{
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+#d div{
+  position: absolute;
+  width: 100%;
+  bottom: 40px;
+  text-align: center;
 }

@@ -46,9 +46,11 @@ const Nav = (props) => {
   
     const styles= {
       container:{
-        position: 'absolute',
+        position: 'fixed',
         bottom: '30px',
         right: '10px',
+        float: 'center',
+        // textAlign: 'center',
         // left: side ? '' : '10px',
         zIndex: '99',
         opacity: 0.9,
@@ -91,7 +93,6 @@ const Nav = (props) => {
             <div className='circleBase' id = 'navMenuBtn' style={styles.container}>
                 <MenuButton open={isOpen} onClick={()=>handleMenuClick()} color='white'/>
             </div>
-            
             <Menu menuItems = {menuItems} open={isOpen} onClick={()=>{handleLinkClick();}} />
         </div>
     )

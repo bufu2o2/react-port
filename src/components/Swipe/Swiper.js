@@ -1,9 +1,8 @@
 import React, {Fragment, useContext, useState} from 'react';
-import {Swipe, Position} from 'react-swipe-component';
+import {Swipe} from 'react-swipe-component';
 import {PageContext} from '../Contexts/PageContext';
 import {MenuContext} from '../Contexts/MenuContext';
 import SwipeBtn from './SwipeBtn';
-
 
 
 
@@ -14,47 +13,55 @@ const Swiper = (props) => {
   const [isOpen, setIsOpen] = useContext(MenuContext);
   const [xpos, setXpos] = useState(0);
   const [ypos, setYpos] = useState(0);
-  const swipeDistance = 250;
+  const [opacityU, setOpacityU] = useState(0);
+  const [opacityD, setOpacityD] = useState(0);
+  const [opacityL, setOpacityL] = useState(0);
+  const [opacityR, setOpacityR] = useState(0);
+  
 
     return(
       <Fragment>
-      <SwipeBtn left = {props.swipeRight} right={props.swipeLeft} up={"Nav"} down={props.swipeDown || 'Contact'} />
+      <SwipeBtn opacityUp={opacityU} opacityDown={opacityD} opacityLeft={opacityL} opacityRight={opacityR} left = {props.swipeRight} right={props.swipeLeft} down={"Nav"} up={props.swipeDown || 'Contact'} />
       <Swipe 
       // onSwipe={() => console.log('On Swipe Fired') }
-      // onSwipeEnd={() => console.log("Swipe Ended") }
+      onSwipeEnd={() => {
+        setOpacityD(0);
+        setOpacityL(0);
+        setOpacityR(0);
+        setOpacityU(0);
+      }}
+      detectMouse={false}
+      detectTouch={true}
+      delta = {200}
       onSwipingLeft={ x => {
         setXpos(x);
-          if(x<-1*(swipeDistance)){
-          console.log('Swiped left', x)
-          setPage(props.swipeLeft)
-        }}}
+        setPage(props.swipeLeft)
+      }}
       onSwipingRight = { x => {
         setXpos(x);
-        if(x>swipeDistance){
-          console.log("Swiped right", x) 
-          setPage(props.swipeRight)
-        }
-        } }
-      onSwipingUp =  { y => {
+        setPage(props.swipeRight)
+        }}
+      onSwipingUp = { y => {
         setYpos(y);
-        if(y< -1*(swipeDistance)){
           setIsOpen(!isOpen);
-          console.log("Swiped up", y) 
-        } }}
+      }}
       onSwipingDown =  { y => {
         setYpos(y);
-        if(y>swipeDistance){
-        console.log("Swiped down", y) 
         setPage(props.swipeDown || 'Contact')
-        } }}
-      onSwipeListener = { p => {
+      }}
+      onSwipe = { p => {
         if (p.x !== 0) {
-          console.log(`Swipe x: ${p.x}`)
+          let x = (((Math.floor(p.x)/2))/100);
+           x > 0 ? setOpacityL(x) : setOpacityR(Math.abs(x));
+         
+            
+          console.log(`Swipe x: ${p.x} SetOpacity: LEFT${opacityL}   RIGHT${opacityR}`)
         }
         if (p.y !== 0) {
-          console.log(`Swipe y: ${p.y}`)
-        }}
-      }
+          let y = (((Math.floor(p.y)/2))/100);
+           y > 0 ? setOpacityU(y) : setOpacityD(Math.abs(y));
+          console.log(`Swipe y: ${p.y} SetOpacity: UP${opacityU}    DOWN${opacityD}`)
+        }} }
       >
       <div id = 'testdiv' ></div>
       </Swipe>
