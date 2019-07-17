@@ -1,8 +1,8 @@
-import React, {useContext, useState} from 'react';
+import React, {Fragment, useContext, useState} from 'react';
 import {Swipe, Position} from 'react-swipe-component';
 import {PageContext} from '../Contexts/PageContext';
 import {MenuContext} from '../Contexts/MenuContext';
-
+import SwipeBtn from './SwipeBtn';
 
 
 
@@ -17,6 +17,8 @@ const Swiper = (props) => {
   const swipeDistance = 250;
 
     return(
+      <Fragment>
+      <SwipeBtn left = {props.swipeRight} right={props.swipeLeft} up={"Nav"} down={props.swipeDown || 'Contact'} />
       <Swipe 
       // onSwipe={() => console.log('On Swipe Fired') }
       // onSwipeEnd={() => console.log("Swipe Ended") }
@@ -56,6 +58,7 @@ const Swiper = (props) => {
       >
       <div id = 'testdiv' ></div>
       </Swipe>
+      </Fragment>
     )
 }
 

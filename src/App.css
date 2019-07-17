@@ -120,6 +120,28 @@ body a {
   width: 100%;
   background-color: transparent;
 }
-#menuSwipe{
-  z-index: 100;
+.navGuide{
+  font-size: 50px;
+}
+#navGuide-L{ 
+  position: absolute;
+  top: calc(50% - 25px);
+  left: 10px;
+}
+#navGuide-R{ 
+  position: absolute;
+  top: calc(50% - 25px);
+  right: 10px;
+}
+#navGuide-U{ 
+  position: absolute;
+  /* width: 100%; */
+  margin: 0 auto;
+  top: 10px;
+}
+#navGuide-D{ 
+  position: absolute;
+  display: flex;
+  align-content: center;
+  bottom: 10px;
 }
