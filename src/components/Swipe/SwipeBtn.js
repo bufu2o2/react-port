@@ -3,39 +3,46 @@ import React, {Fragment, useState} from 'react';
 
 
 const NavGuide = props => {
+    const [xpos, setXpos] = useState(props.xpos);
+    const [ypos, setYpos] = useState(props.ypos);
 
+    if(xpos !== props.xpos) { setXpos(props.xpos) }
+    if(ypos !== props.ypos) { setYpos(props.ypos) }
 
+    // xpos>0 ? console.log('left') : console.log('right');
+    // ypos>0 ? console.log('down') : console.log('up');
 
 
     return(
         <Fragment>
+            
             <div style={{opacity: props.opacityLeft}} id = 'navGuide-L' className = 'navGuide'>
-                <div className = 'arrowBtn' id='l'>
-                    <i className ='left' /> 
+            <i style={ xpos>0 ? {left: `calc(100%/215*${xpos})`} : {right: `calc(100%/-215*${xpos})`} }className ='right' /> 
+                <div id='l'>
                     <div>
                         {props.left}
                     </div>
                 </div>
             </div>
             <div style={{opacity: props.opacityRight}} id = 'navGuide-R' className = 'navGuide'>
-                <div className = 'arrowBtn' id='r'>
-                    <i className ='right' /> 
+            <i style={ xpos>0 ? {left: `calc(100%/215*${xpos})`} : {right: `calc(100%/-215*${xpos})`} }className ='left' /> 
+                <div id='r'>
                     <div>
                         {props.right}
                     </div>
                 </div>
             </div>
             <div style={{opacity: props.opacityUp}} id = 'navGuide-U' className = 'navGuide'>
-                <div className = 'arrowBtn' id='u'>
-                    <i className ='up' /> 
+            <i style={ ypos>0 ? {top: `calc(100%/215*${ypos})`} : {bottom: `calc(100%/-215*${ypos})`} }className ='down' /> 
+                <div id='u'>
                     <div>
                         {props.up}
                     </div>
                 </div>
             </div>
             <div style={{opacity: props.opacityDown}} id = 'navGuide-D' className = 'navGuide'>
-                <div className = 'arrowBtn' id='d'>
-                    <i className ='down' /> 
+            <i style={ ypos>0 ? {top: `calc(100%/215*${ypos})`} : {bottom: `calc(100%/-215*${ypos})`} }className ='up' /> 
+                <div id='d'>
                     <div>
                         {props.down}
                     </div>

@@ -124,32 +124,30 @@ body a {
 #navGuide-L{ 
   position: absolute;
   top: calc(50% - 25px);
-  left: 20px;
+  left: 0px;
 }
 #navGuide-R{ 
   position: absolute;
   top: calc(50% - 25px);
-  right: 20px;
+  right: 0px;
 }
 #navGuide-U{ 
-  position: fixed;
+  position: absolute;
   width: 100%;
   text-align: center;
-  top: 20px;
+  top: -10px;
 }
 #navGuide-D{ 
   position: fixed;
   width: 100%;
   text-align: center;
-  bottom: 20px;
+  bottom: -10px;
 }
 
 
 /* Making Arrows =============================================== */
-.arrowBtn{
-  position: relative;
-}
 i{
+  position: 'fixed';
   border: solid;
   border-width: 0 5px 5px 0;
   height: 50px;
@@ -157,15 +155,20 @@ i{
   display: inline-block;
 }
 .left {
+  position: fixed;
+  top: calc(50% - 50px);
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
 #l div{
   position: absolute;
   top: calc(50% - 10px);
-  left: 15px;
+  left: 50%;
+  transform: rotate(90deg);
 }
 .right {
+  position: fixed;
+  top: calc(50% - 50px);
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
@@ -173,8 +176,11 @@ i{
   position: absolute;
   top: calc(50% - 13px);
   right: 15px;
+  transform: rotate(-90deg);
 }
 .up{
+  position: fixed;
+  margin-left: -30px;
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
 }
@@ -185,6 +191,8 @@ i{
   text-align: center;
 }
 .down{
+  position: fixed;
+  margin-left: -30px;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }

@@ -1,5 +1,5 @@
 import React, {Fragment, useContext, useState} from 'react';
-import {Swipe} from 'react-swipe-component';
+import {Swipe, Position} from 'react-swipe-component';
 import {PageContext} from '../Contexts/PageContext';
 import {MenuContext} from '../Contexts/MenuContext';
 import SwipeBtn from './SwipeBtn';
@@ -21,7 +21,18 @@ const Swiper = (props) => {
 
     return(
       <Fragment>
-      <SwipeBtn opacityUp={opacityU} opacityDown={opacityD} opacityLeft={opacityL} opacityRight={opacityR} left = {props.swipeRight} right={props.swipeLeft} down={"Nav"} up={props.swipeDown || 'Contact'} />
+      <SwipeBtn 
+        xpos={xpos}
+        ypos={ypos}
+        opacityUp={opacityU} 
+        opacityDown={opacityD} 
+        opacityLeft={opacityL} 
+        opacityRight={opacityR} 
+        left = {props.swipeRight} 
+        right={props.swipeLeft} 
+        down={"Nav"} 
+        up={props.swipeDown || 'Contact'} 
+      />
       <Swipe 
       // onSwipe={() => console.log('On Swipe Fired') }
       onSwipeEnd={() => {
@@ -29,6 +40,8 @@ const Swiper = (props) => {
         setOpacityL(0);
         setOpacityR(0);
         setOpacityU(0);
+        setXpos(0);
+        setYpos(0);
       }}
       detectMouse={false}
       detectTouch={true}
@@ -51,16 +64,18 @@ const Swiper = (props) => {
       }}
       onSwipe = { p => {
         if (p.x !== 0) {
+          setXpos(p.x);
           let x = (((Math.floor(p.x)/2))/100);
            x > 0 ? setOpacityL(x) : setOpacityR(Math.abs(x));
          
             
-          console.log(`Swipe x: ${p.x} SetOpacity: LEFT${opacityL}   RIGHT${opacityR}`)
+          // console.log(`Swipe x: ${p.x} SetOpacity: LEFT${opacityL}   RIGHT${opacityR}`)
         }
         if (p.y !== 0) {
+          setYpos(p.y);
           let y = (((Math.floor(p.y)/2))/100);
            y > 0 ? setOpacityU(y) : setOpacityD(Math.abs(y));
-          console.log(`Swipe y: ${p.y} SetOpacity: UP${opacityU}    DOWN${opacityD}`)
+          // console.log(`Swipe y: ${p.y} SetOpacity: UP${opacityU}    DOWN${opacityD}`)
         }} }
       >
       <div id = 'testdiv' ></div>
