@@ -13,6 +13,7 @@
     "react-scripts": "3.0.1",
     "react-swipe-component": "^3.0.0",
     "react-swipeable-views": "^0.13.3",
+    "react-transition-group": "^4.2.1",
     "vue-pose": "^0.5.1"
   },
   "scripts": {

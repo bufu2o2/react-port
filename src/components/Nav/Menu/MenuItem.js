@@ -1,11 +1,13 @@
 import React, {useState, useContext} from 'react';
 import {PageContext} from '../../Contexts/PageContext';
 import {MenuContext} from '../../Contexts/MenuContext';
+import {SwipeRContext} from '../../Contexts/SwipeRContext';
 
 const MenuItem = props => {
   const [hover, setHover] = useState(false);
   const [page, setPage] = useContext(PageContext)
   const [isOpen, setIsOpen] = useContext(MenuContext);
+  const [swipeRight, setSwipeRight] = useContext(SwipeRContext);
 
   const handleHover = () => {
     // console.log('handle hover fired')
@@ -56,8 +58,16 @@ const MenuItem = props => {
       onMouseEnter={()=>{handleHover()}} 
       onMouseLeave={()=>{handleHover()}}
       onClick= {() => { 
-        setPage(props.val)
-        setIsOpen(!isOpen)}}
+          setIsOpen(!isOpen)
+          setTimeout(() => {
+            setSwipeRight(false);
+          }, 500);
+          setTimeout(() => {
+            setSwipeRight(true);
+            setPage(props.val)
+          }, 1000);
+        }
+      }
     >
       {props.children}  
     </div>

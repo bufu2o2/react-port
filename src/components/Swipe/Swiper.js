@@ -2,6 +2,9 @@ import React, {Fragment, useContext, useState} from 'react';
 import {Swipe, Position} from 'react-swipe-component';
 import {PageContext} from '../Contexts/PageContext';
 import {MenuContext} from '../Contexts/MenuContext';
+import {SwipeRContext} from '../Contexts/SwipeRContext';
+import {SwipeDContext} from '../Contexts/SwipeDContext';
+import {SwipeLContext} from '../Contexts/SwipeLContext';
 import SwipeBtn from './SwipeBtn';
 
 
@@ -11,6 +14,9 @@ import SwipeBtn from './SwipeBtn';
 const Swiper = (props) => {
   const [page, setPage] = useContext(PageContext)
   const [isOpen, setIsOpen] = useContext(MenuContext);
+  const [swipeRight, setSwipeRight] = useContext(SwipeRContext);
+  const [swipeLeft, setSwipeLeft] = useContext(SwipeLContext);
+  const [swipeDown, setSwipeDown] = useContext(SwipeDContext);
   const [xpos, setXpos] = useState(0);
   const [ypos, setYpos] = useState(0);
   const [opacityU, setOpacityU] = useState(0);
@@ -48,11 +54,23 @@ const Swiper = (props) => {
       delta = {200}
       onSwipingLeft={ x => {
         setXpos(x);
-        setPage(props.swipeLeft)
+        setTimeout(() => {
+          setSwipeLeft(false);
+        }, 300);
+        setTimeout(() => {
+          setSwipeLeft(true);
+          setPage(props.swipeLeft)
+        }, 1000);
       }}
       onSwipingRight = { x => {
         setXpos(x);
-        setPage(props.swipeRight)
+        setTimeout(() => {
+          setSwipeRight(false);
+        }, 300);
+        setTimeout(() => {
+          setSwipeRight(true);
+          setPage(props.swipeRight)
+        }, 1000);
         }}
       onSwipingUp = { y => {
         setYpos(y);
@@ -60,7 +78,13 @@ const Swiper = (props) => {
       }}
       onSwipingDown =  { y => {
         setYpos(y);
-        setPage(props.swipeDown || 'Contact')
+        setTimeout(() => {
+          setSwipeDown(false);
+        }, 300);
+        setTimeout(() => {
+          setSwipeDown(true);
+          setPage(props.swipeDown || 'Contact')
+        }, 1000);
       }}
       onSwipe = { p => {
         if (p.x !== 0) {

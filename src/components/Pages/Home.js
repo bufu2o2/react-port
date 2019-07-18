@@ -5,7 +5,6 @@ import Intro from '../Text/Intro';
 import Swiper from '../Swipe/Swiper';
 
 
-const rnum = constraint => Math.random(Math.floor() * constraint);
 const IntroHolder = posed.div({
     init: { scale: 1 },
     enter: { y: 200, opacity: 1, delay: 300},
@@ -51,8 +50,12 @@ const WelcomeHolder = posed.div({
 //     draggable: true
 //   };
 
+const Transition = posed.div({
+  enter: {opacity: 1},
+  exit: {opacity: 0}
+})
 
-  const Test = posed.div({
+  const Drag = posed.div({
     draggable: true,
     hoverable: true,
     hover: {
@@ -76,16 +79,18 @@ const Home = () => {
     
     return(
       <div className = 'pageTransition'>
+      {/* // <Transition pose={isVisible ? 'enter' : 'exit'}> */}
         <Swiper swipeLeft = 'About' swipeRight = 'Portfolio' />
             <div className = 'pageTitle'>
                 <IntroHolder className = 'pointerHover' pose={isVisible ? 'enter': 'exit'} onClick={()=> {setIsVisible(!isVisible)}} >
-                    <Test><Intro /></Test> 
+                    <Drag><Intro /></Drag> 
                 </IntroHolder>
                 <WelcomeHolder className = 'pointerHover' pose={isVisible ? 'enter' : 'exit'} >
                 {/* <SplitText charPoses={charPoses}>Welcome</SplitText> */}
-                <Test> Welcome </Test>
+                <Drag> Welcome </Drag>
                 </WelcomeHolder>
             </div>
+            {/* </Transition> */}
         </div>
     )
 }
