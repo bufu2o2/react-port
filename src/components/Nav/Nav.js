@@ -1,10 +1,12 @@
 
-import React, {useContext} from 'react';
+import React, {useState, useContext} from 'react';
 
 //component import ==========================================
 import MenuItem from './Menu/MenuItem'
 import Menu from './Menu/Menu';
 import MenuButton from './Menu/MenuBtn';
+import Modal from '../Pages/Parts/Modal';
+import ContactForm from '../Pages/Parts/ContactForm';
 
 //stylesheet =============================================
 import './Menu/Menu.css';
@@ -12,6 +14,7 @@ import posed from 'react-pose';
 
 //Context Import =============================================
 import {MenuContext} from '../Contexts/MenuContext';
+import {ModalContext} from '../Contexts/ModalContext';
 
 
 
@@ -24,7 +27,17 @@ const MenuHolder = posed.div({
       // drag: { scale: 1.1, boxShadow: '0px 2px 3px rgba(0,0,0,0.1)' }
 })
 
-
+const ModalTrans = posed.div({
+  enter: {
+    opacity: 1,
+    y: 0
+  },
+  down: {
+    opacity: 0,
+    y: '-300%'
+  },
+  transition: {type: 'physics', velocity: 200},
+})
 
 
 
@@ -33,15 +46,15 @@ const Nav = (props) => {
 
     // const [isOpen, setIsOpen] = useState(false);
     const [isOpen, setIsOpen] = useContext(MenuContext);
+    const [misOpen, setMisOpen] = useContext(ModalContext);
 
     const handleMenuClick = () => {
+      setMisOpen(false);
       setIsOpen(!isOpen);
     }
     
     const handleLinkClick = () => {
-      console.log('this is menu open before click     ', isOpen);
       setIsOpen(false);
-      console.log('this is menu open after click     ', isOpen);
     }
   
     const styles= {
@@ -73,9 +86,18 @@ const Nav = (props) => {
         alignContent: 'center',
         width: '100vw',
         height: '100vh',
-        filter: isOpen ? 'blur(2px)':null,
+        filter: isOpen || misOpen ? 'blur(2px)':null,
         transition: 'filter 1s ease',
       },
+      modal: {
+        display: 'flex',
+        textAlign: 'center',
+        flexDirection: 'column',
+        alignContent: 'center',
+        width: '100vw',
+        height: '100vh',
+        transition: 'filter 1s ease',
+      }
     }
   const menu = ['Home','About','Portfolio','Contact']
   const menuItems = menu.map((val,index)=> {
@@ -94,7 +116,11 @@ const Nav = (props) => {
                 <MenuButton open={isOpen} onClick={()=>handleMenuClick()} color='white'/>
             </div>
             <Menu menuItems = {menuItems} open={isOpen} onClick={()=>{handleLinkClick();}} />
+            <ModalTrans id='modal' pose = {misOpen ? 'enter' : 'down'}>
+              <Modal open={misOpen} component={<ContactForm />} title='Lets Work Together!' />
+            </ModalTrans>
         </div>
+        
     )
 }
 

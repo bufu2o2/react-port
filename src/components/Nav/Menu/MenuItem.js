@@ -2,12 +2,14 @@ import React, {useState, useContext} from 'react';
 import {PageContext} from '../../Contexts/PageContext';
 import {MenuContext} from '../../Contexts/MenuContext';
 import {SwipeRContext} from '../../Contexts/SwipeRContext';
+import {ModalContext} from '../../Contexts/ModalContext';
 
 const MenuItem = props => {
   const [hover, setHover] = useState(false);
   const [page, setPage] = useContext(PageContext)
   const [isOpen, setIsOpen] = useContext(MenuContext);
   const [swipeRight, setSwipeRight] = useContext(SwipeRContext);
+  const [misOpen, setMisOpen] = useContext(ModalContext);
 
   const handleHover = () => {
     // console.log('handle hover fired')
@@ -59,12 +61,18 @@ const MenuItem = props => {
       onMouseLeave={()=>{handleHover()}}
       onClick= {() => { 
           setIsOpen(!isOpen)
+          console.log('page: ',page)
+          console.log('props.val: ', props.val)
           setTimeout(() => {
-            setSwipeRight(false);
+            if(props.val !== 'Contact' && props.val !== page){ setSwipeRight(false)}
           }, 500);
           setTimeout(() => {
-            setSwipeRight(true);
-            setPage(props.val)
+            if(props.val === 'Contact'){ setMisOpen(true) }
+            else{
+              console.log('setPage set to : ', props.val)
+              setSwipeRight(true) 
+              setPage(props.val)
+            }
           }, 1000);
         }
       }

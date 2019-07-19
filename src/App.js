@@ -8,6 +8,7 @@ import {MenuOpen} from './components/Contexts/MenuContext';
 import {SwipeR} from './components/Contexts/SwipeRContext';
 import {SwipeL} from './components/Contexts/SwipeLContext';
 import {SwipeD} from './components/Contexts/SwipeDContext';
+import {Modal} from './components/Contexts/ModalContext';
 import './App.css';
 
 
@@ -20,11 +21,13 @@ function App() {
     <Particles />
     <SwipeR>
     <PageName>
+      <Modal>
       <SwipeL><SwipeD>
       <MenuOpen>
         <AppComp />
       </MenuOpen>
       </SwipeD></SwipeL>
+      </Modal>
     </PageName>  
     </SwipeR>
   </div>
