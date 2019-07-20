@@ -221,10 +221,10 @@ i{
   justify-content: space-around;
   text-align: center;
   background-color: goldenrod;
-  width: 60%;
+  width: 70%;
   height: 40%;
   top: calc(50% - 20%);
-  left: calc(50% - 30%);
+  left: calc(50% - 35%);
   z-index: 1000;
   border-radius: 8px;
   /* border: 1px solid white;
@@ -260,13 +260,18 @@ i{
   right: -20px;
   font-size: 20px;
   font-weight: bolder;
+  cursor: crosshair;
+}
+#close:hover{
+  font-size: 30px;
+  color: #FF4C3F;
 }
 form {
   height: 100%;
+  width: 100%;
   display: grid;
   margin: .5% 0;
   grid-template-columns: 1fr 1fr;
-  /* grid-template-columns: repeat(auto-fill, minmax(50px), 1fr); */
 }
 .form-group{
   width: 90%;
@@ -277,7 +282,7 @@ form {
 .form-group input {
   line-height: 1.5;
   font-size: 1.5vh;
-  width: 100%;
+  width: 90%;
   border: 1px inset grey;
   border-radius: 3px;
   text-align: center;
@@ -316,7 +321,7 @@ form {
   outline: none;
   border-radius: 50%;
   background-color: transparent;
-  margin: .5%;
+  margin: 5px;
 }
 #form-submit-icon {
   text-align: left;

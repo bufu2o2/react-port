@@ -4,8 +4,10 @@ import Icon from '@material-ui/core/Icon';
 import * as emailjs from 'emailjs-com';
 
 
+
 const ContactForm = () => {
     const [misOpen, setMisOpen] = useContext(ModalContext);
+    const [sent, setSent] = useState(false);
 
     const onSubmit = e => {
         e.preventDefault();
@@ -18,6 +20,7 @@ const ContactForm = () => {
             message
         };
         console.log(temp);
+        setSent(true);
         //build email obj in email js format ================================================
         emailObj = {
             'from_name': name,
@@ -43,6 +46,7 @@ const ContactForm = () => {
             message: ''
         });
         setMisOpen(false);
+        setSent(false);
     }
 
     const [contact, setContact] = useState({
@@ -100,7 +104,9 @@ const ContactForm = () => {
                         <textarea id="form-message" type="textarea" name='message' placeholder="Message" required value={message} onChange={onChange} />
                     </div>
                     <div className="center">
-                        <button type='submit' value='submit' id="form-submit"><Icon id='form-submit-icon'>send</Icon></button>
+                        <button type='submit' value='submit' id="form-submit">
+                            <Icon id='form-submit-icon'>send</Icon>
+                        </button>
                     </div>
                 </form>
             </div>
