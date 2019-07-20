@@ -11,12 +11,11 @@ const Modal = props => {
 
     return (
         <div id='modalContainer'>
+            {/* <div id='modalTitle' >{props.title}</div> */}
             <div id='close' onClick={() => setMisOpen(false)} >&times;</div>
             <div id='modalTop'>
-                
             </div>
             <div id='modalBottom'>
-                {props.title}
                 {props.component}
             </div>
         </div>

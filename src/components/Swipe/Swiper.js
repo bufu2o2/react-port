@@ -30,6 +30,7 @@ const Swiper = (props) => {
 
   //functions =============================================================
     const zeroState = () => {
+      setSwipeAction('');
         setOpacityD(0);
         setOpacityL(0);
         setOpacityR(0);
@@ -84,6 +85,11 @@ const Swiper = (props) => {
             setMisOpen(false);
             setIsOpen(!isOpen);
             zeroState();
+          default:
+            setMisOpen(false);  
+            setIsOpen(false);
+            zeroState();
+            break;
         }
   
       }}
