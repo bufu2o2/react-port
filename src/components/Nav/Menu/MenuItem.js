@@ -61,15 +61,15 @@ const MenuItem = props => {
       onMouseLeave={()=>{handleHover()}}
       onClick= {() => { 
           setIsOpen(!isOpen)
-          console.log('page: ',page)
-          console.log('props.val: ', props.val)
+          // console.log('page: ',page)
+          // console.log('props.val: ', props.val)
           setTimeout(() => {
             if(props.val !== 'Contact' && props.val !== page){ setSwipeRight(false)}
           }, 500);
           setTimeout(() => {
             if(props.val === 'Contact'){ setMisOpen(true) }
             else{
-              console.log('setPage set to : ', props.val)
+              // console.log('setPage set to : ', props.val)
               setSwipeRight(true) 
               setPage(props.val)
             }

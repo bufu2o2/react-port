@@ -262,7 +262,9 @@ i{
   font-weight: bolder;
 }
 form {
+  height: 100%;
   display: grid;
+  margin: .5% 0;
   grid-template-columns: 1fr 1fr;
   /* grid-template-columns: repeat(auto-fill, minmax(50px), 1fr); */
 }
@@ -295,6 +297,7 @@ form {
   border: 1px inset grey;
   font-family: 'Lato', sans-serif;
   border-radius: 3px;
+  margin-bottom: -1%;
 }
 .center{
   grid-column: 1/3;
@@ -329,4 +332,8 @@ form {
   position: absolute;
   top: -4vh;
   font-size: 3vh;
+}
+.container{
+  width: 100%;
+  height: 100%;
 }
