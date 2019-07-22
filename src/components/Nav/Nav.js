@@ -1,5 +1,5 @@
 
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 
 //component import ==========================================
 import MenuItem from './Menu/MenuItem'
@@ -38,6 +38,21 @@ const ModalTrans = posed.div({
     y: '-300%'
   },
   transition: {type: 'physics', velocity: 200},
+})
+
+
+
+const SwipeIntro = posed.div({
+  'enter': {
+      opacity: 0,
+      y: '-100vh',
+      duration: 500
+  },
+  'exit': {
+      opacity: 1,
+      y: 0,
+      duration: 500
+  }
 })
 
 
@@ -100,6 +115,19 @@ const Nav = (props) => {
         transition: 'filter 1s ease',
       }
     }
+
+    //swipe nav directions on initial load=====================================================================
+    const [pageLoad, setPageLoad] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setPageLoad(!pageLoad);
+        }, 500);
+    }, [])
+    setTimeout(() => {
+        setPageLoad(true);
+    }, 2000);
+
+
   const menu = ['Home','About','Portfolio','Contact']
   const menuItems = menu.map((val,index)=> {
     // console.log('this is val inside of the menuitems map      ', val);
@@ -113,7 +141,7 @@ const Nav = (props) => {
 
     return (
         <div>
-          
+          <SwipeIntro pose={pageLoad ? 'enter' : 'exit'} id='swipetonav'>Swipe to Navigate</SwipeIntro>
           <div id='socialmedia'><SocialMedia mis={misOpen} /></div>
             <div className='circleBase' id = 'navMenuBtn' style={styles.container}>
                 <MenuButton open={isOpen} onClick={()=>handleMenuClick()} color='white'/>
