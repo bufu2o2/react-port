@@ -96,7 +96,7 @@ const Swiper = (props) => {
       }}
       detectMouse={false}
       detectTouch={true}
-      delta = {200}
+      delta = {150}
       onSwipingLeft={ x => {
         setXpos(x);
         setSwipeAction('l');

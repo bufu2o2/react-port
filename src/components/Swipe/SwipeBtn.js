@@ -16,7 +16,7 @@ const NavGuide = props => {
     return(
         <Fragment>
             <div style={{opacity: (props.opacityLeft*2)}} id = 'navGuide-L' className = 'navGuide'>
-            <i style={ xpos>0 ? {left: `calc(100%/215*${xpos})`} : {right: `calc(100%/-215*${xpos})`} }className ='right' /> 
+            <i style={ xpos>0 ? {left: `calc(100%/165*${xpos})`} : {right: `calc(100%/-165*${xpos})`} }className ='right' /> 
                 <div id='l'>
                     <div>
                         {props.left}
@@ -24,7 +24,7 @@ const NavGuide = props => {
                 </div>
             </div>
             <div style={{opacity: (props.opacityRight*2)}} id = 'navGuide-R' className = 'navGuide'>
-            <i style={ xpos>0 ? {left: `calc(100%/215*${xpos})`} : {right: `calc(100%/-215*${xpos})`} }className ='left' /> 
+            <i style={ xpos>0 ? {left: `calc(100%/165*${xpos})`} : {right: `calc(100%/-165*${xpos})`} }className ='left' /> 
                 <div id='r'>
                     <div>
                         {props.right}
@@ -32,7 +32,7 @@ const NavGuide = props => {
                 </div>
             </div>
             <div style={{opacity: (props.opacityUp*2)}} id = 'navGuide-U' className = 'navGuide'>
-            <i style={ ypos>0 ? {top: `calc(100%/215*${ypos})`} : {bottom: `calc(100%/-215*${ypos})`} }className ='down' /> 
+            <i style={ ypos>0 ? {top: `calc(100%/165*${ypos})`} : {bottom: `calc(100%/-165*${ypos})`} }className ='down' /> 
                 <div id='u'>
                     <div>
                         {props.up}
@@ -40,7 +40,7 @@ const NavGuide = props => {
                 </div>
             </div>
             <div style={{opacity: (props.opacityDown*2)}} id = 'navGuide-D' className = 'navGuide'>
-            <i style={ ypos>0 ? {top: `calc(100%/215*${ypos})`} : {bottom: `calc(100%/-215*${ypos})`} }className ='up' /> 
+            <i style={ ypos>0 ? {top: `calc(100%/165*${ypos})`} : {bottom: `calc(100%/-165*${ypos})`} }className ='up' /> 
                 <div id='d'>
                     <div>
                         {props.down}
