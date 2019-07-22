@@ -7,6 +7,7 @@ import Menu from './Menu/Menu';
 import MenuButton from './Menu/MenuBtn';
 import Modal from '../Pages/Parts/Modal';
 import ContactForm from '../Pages/Parts/ContactForm';
+import SocialMedia from '../Pages/Parts/SocialMedia';
 
 //stylesheet =============================================
 import './Menu/Menu.css';
@@ -112,6 +113,8 @@ const Nav = (props) => {
 
     return (
         <div>
+          
+          <div id='socialmedia'><SocialMedia mis={misOpen} /></div>
             <div className='circleBase' id = 'navMenuBtn' style={styles.container}>
                 <MenuButton open={isOpen} onClick={()=>handleMenuClick()} color='white'/>
             </div>

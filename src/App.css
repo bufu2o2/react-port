@@ -244,6 +244,10 @@ i{
   width: 100%;
   background: #FF4C3F;
   border-radius: 8px 8px 0 0;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-size: 5vh;
 }
 #modalBottom {
   height: 100%;
@@ -341,4 +345,16 @@ form {
 .container{
   width: 100%;
   height: 100%;
+}
+#socialmedia {
+  position: fixed;
+  top: calc(50% - 120px);
+  z-index: 10000;
+}
+
+
+@media only screen and (max-width: 400px) {
+  #socialmedia {
+    top: 10px;
+  }
 }

@@ -1,6 +1,12 @@
 import React, {} from 'react';
 import AppComp from './components/AppComp/AppComp';
 
+//FontAwesome Imports ====================================================================
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+
 //Other Import ==========================================================================
 import Particles from './components/Bg/Particles';
 import {PageName} from './components/Contexts/PageContext';
@@ -14,6 +20,7 @@ import './App.css';
 
 function App() {
 
+  library.add(fab, fas)
 
   return (
  
