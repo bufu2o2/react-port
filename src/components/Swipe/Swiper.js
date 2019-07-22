@@ -83,8 +83,9 @@ const Swiper = (props) => {
             break;
           case 'u':
             setMisOpen(false);
-            setIsOpen(!isOpen);
+            setIsOpen(true);
             zeroState();
+            break;
           default:
             setMisOpen(false);  
             setIsOpen(false);

@@ -6,13 +6,15 @@ import posed from 'react-pose';
 
 const SocialNav = posed.nav({
     'enter': {
-        x: 0,
+        x: '0%',
         opacity: 1,
-        staggerChildren: 100
+        delay: 500,
     },
     'exit': {
         x: '-100%',
-        opacity: 0
+        opacity: 0,
+        delay: 400,
+        transition: {duration: 300}
     },
 })
 

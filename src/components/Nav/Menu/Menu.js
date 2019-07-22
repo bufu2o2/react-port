@@ -1,15 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, {useContext} from 'react';
+import {MenuContext} from '../../Contexts/MenuContext';
 
 const Menu = props => {
 
 
 // console.log('this is menu items in menu    ', props.menuItems)
 
-  const [open, setOpen] = useState(props.open ? props.open : false)
+  const [isOpen, setIsOpen] = useContext(MenuContext);
+  
 
-  useEffect( () => {
-    setOpen(props.open);
-  }, [props.open]);
 
 
   const styles={
@@ -17,7 +16,7 @@ const Menu = props => {
       position: 'absolute',
       bottom: 0,
       right: 0,
-      height: open? '100%': 0,
+      height: isOpen? '100%': 0,
       width: '100vw',
       display: 'flex',
       flexDirection: 'column',
@@ -45,7 +44,7 @@ const Menu = props => {
   return (
     <div style={styles.container}>
     {
-      open ? <div id = 'menuitemlist' style = {styles.menuList}> {props.menuItems}</div>
+      isOpen ? <div id = 'menuitemlist' style = {styles.menuList}> {props.menuItems}</div>
         :
         null
     }
