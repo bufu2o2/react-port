@@ -1,6 +1,18 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
+import posed from 'react-pose';
 
-
+const SwipeIntro = posed.div({
+    'enter': {
+        opacity: 0,
+        y: '-100vh',
+        duration: 500
+    },
+    'exit': {
+        opacity: 1,
+        y: 0,
+        duration: 500
+    }
+})
 
 const NavGuide = props => {
     const [xpos, setXpos] = useState(props.xpos);
@@ -12,10 +24,19 @@ const NavGuide = props => {
     // xpos>0 ? console.log('left') : console.log('right');
     // ypos>0 ? console.log('down') : console.log('up');
 
+    const [pageLoad, setPageLoad] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setPageLoad(!pageLoad);
+        }, 500);
+    }, [])
+    setTimeout(() => {
+        setPageLoad(true);
+    }, 2000);
 
     return(
         <Fragment>
-            
+            <SwipeIntro pose={pageLoad ? 'enter' : 'exit'} id='swipetonav'>Swipe to Navigate</SwipeIntro>
             <div style={{opacity: (props.opacityLeft*2)}} id = 'navGuide-L' className = 'navGuide'>
             <i style={ xpos>0 ? {left: `calc(100%/215*${xpos})`} : {right: `calc(100%/-215*${xpos})`} }className ='right' /> 
                 <div id='l'>

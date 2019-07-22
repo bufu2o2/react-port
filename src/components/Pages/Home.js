@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import posed from 'react-pose';
 // import SplitText from 'react-pose-text';
 import Intro from '../Text/Intro';
@@ -51,8 +51,12 @@ const WelcomeHolder = posed.div({
 //   };
 
 const Transition = posed.div({
-  enter: {opacity: 1},
-  exit: {opacity: 0}
+  enter: {
+    filter: 'blur(5px)'
+  },
+  exit: {
+    filter: 'blur(0px)'
+  }
 })
 
   const Drag = posed.div({
@@ -76,12 +80,18 @@ const Transition = posed.div({
 const Home = () => {
    
     const [isVisible, setIsVisible] = useState(true);
+    const [fade, setFade] = useState(true);
+
+    useEffect( () => { 
+      setTimeout(() => {
+        setFade(false);
+      }, 1500);
+    },[])
     
     return(
       <div className = 'pageTransition'>
-      {/* // <Transition pose={isVisible ? 'enter' : 'exit'}> */}
         <Swiper swipeLeft = 'About' swipeRight = 'Portfolio' />
-            <div className = 'pageTitle'>
+            <Transition pose={fade ? 'enter' : 'exit'} className = 'pageTitle'>
                 <IntroHolder className = 'pointerHover' pose={isVisible ? 'enter': 'exit'} onClick={()=> {setIsVisible(!isVisible)}} >
                     <Drag><Intro /></Drag> 
                 </IntroHolder>
@@ -89,8 +99,7 @@ const Home = () => {
                 {/* <SplitText charPoses={charPoses}>Welcome</SplitText> */}
                 <Drag> Welcome </Drag>
                 </WelcomeHolder>
-            </div>
-            {/* </Transition> */}
+            </Transition>
         </div>
     )
 }

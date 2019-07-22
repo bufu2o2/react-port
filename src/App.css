@@ -31,6 +31,15 @@ h1{
   z-index: -1;
 }
 
+#swipetonav{
+  position: fixed;
+  width: 100%;
+  font-size: 12vw;
+  top: calc(50% - 7vw);
+  text-align: center;
+  color: #33C3F7;
+}
+
 .circleBase {
   border-radius: 50%;
 }

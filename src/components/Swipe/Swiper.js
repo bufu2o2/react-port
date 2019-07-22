@@ -127,7 +127,8 @@ const Swiper = (props) => {
           let y = (((Math.floor(p.y)/2))/100);
            y > 0 ? setOpacityU(y) : setOpacityD(Math.abs(y));
           // console.log(`Swipe y: ${p.y} SetOpacity: UP${opacityU}    DOWN${opacityD}`)
-        }} }
+        }} 
+      }
       >
       <div id = 'testdiv' ></div>
       </Swipe>
