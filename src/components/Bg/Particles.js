@@ -70,7 +70,7 @@ const Particles = () => {
     const bgToggler = () => {
         if(!particles){
             return(
-                <div style={{position: 'fixed', width: '100%', height: '100%', background: '#000', zIndex: '0'}} />
+                <div style={{position: 'fixed', width: '100%', height: '100%', background: '#000', zIndex: '-1'}} />
             )
         } else{
             return(
