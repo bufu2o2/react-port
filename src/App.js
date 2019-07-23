@@ -19,12 +19,10 @@ import './App.css';
 
 
 function App() {
-
   library.add(fab, fas)
 
   return (
- 
-  <div className="App">
+    <div className="App">
     <Particles />
     <SwipeR>
     <PageName>

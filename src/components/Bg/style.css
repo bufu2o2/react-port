@@ -3,3 +3,22 @@
   height:100%;
   width: 100%;
 }
+
+#particleToggle {
+  position: fixed;
+  top: 5vh;
+  left: 5vw;
+  background: radial-gradient(circle at 75% 25%, white 1px, lightgreen 3%, darkgreen 60%, lightgreen 100%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: 10;
+  
+  }
+  #particleToggle:hover {
+    cursor: crosshair;
+  }
+#particleToggle span{
+  color: white;
+  margin-left: 2vw;
+}
