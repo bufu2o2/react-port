@@ -10,7 +10,7 @@ const About = () => {
         <div>
             <Swiper swipeLeft='Portfolio' swipeRight='Home'/>
             <div className = 'aboutPage'>
-            <h1 className='pageTitle' style={{fontFamily: 'Poiret One, cursive'}}>me</h1>
+            <h1 className='pageTitle' style={{fontFamily: 'Poiret One, cursive'}}>this.Guy</h1>
             </div>
         </div>
     )
