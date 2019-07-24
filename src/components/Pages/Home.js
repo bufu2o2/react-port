@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import posed from 'react-pose';
 // import SplitText from 'react-pose-text';
 import Intro from '../Text/Intro';
 import Swiper from '../Swipe/Swiper';
+import {FirstLoadContext} from '../Contexts/FirstLoad'
 
 
 const IntroHolder = posed.div({
@@ -10,7 +11,7 @@ const IntroHolder = posed.div({
     'open': { 
     y: 'calc(100vh * .25)', 
     opacity: 1, 
-    delay: 300,
+    delay: 200,
     filter: 'blur(0px)'
   },
     'close': { 
@@ -40,7 +41,7 @@ const WelcomeHolder = posed.div({
     'close': { 
     y: 'calc(100vh * 1)', 
     opacity: 1, 
-    delay: 450, 
+    delay: 400, 
   },
   'load': {
     filter: 'blur(5px)'
@@ -102,6 +103,16 @@ const Transition = posed.div({
         x: 0,
         y: 0,
         transition: { type: 'spring' } 
+    },
+    'start': {
+      x: 0,
+      opacity: 1,
+      color: 'goldenrod'
+    },
+    'change': {
+      x: '-100%',
+      opacity: 0,
+      color: '#FF4C3F'
     }
   })
 
@@ -123,14 +134,39 @@ const Home = () => {
    
     const [isVisible, setIsVisible] = useState(false);
     const [fade, setFade] = useState(window.mobilecheck() ? true : false);
+    const [phrase, setPhrase] = useState('pull up a chair');
+    const [changeP, setChangeP] = useState(true);
+    const [loaded, setLoaded] = useContext(FirstLoadContext);
+
+
+    const phraseArr  = [
+      'pull up a chair',
+      'bring the pups',
+      'pour yourself some tea',
+      'curious minds are welcome',
+      'grab a nitro cold brew',
+      'shh, the toddler is sleeping',
+      "90's music encouraged",
+    ]
+    const randomPhrase = () =>{
+      setChangeP(false);
+      const randInt = Math.floor(Math.random() * phraseArr.length);
+      setPhrase(phraseArr[randInt]);
+      setTimeout(() => {
+        setChangeP(true);
+      }, 300);
+    }
 
     useEffect( () => { 
-      setTimeout(() => {
-        setFade(false)
-      }, 300);
-      setTimeout(() => {
-        setFade(true);
-      }, 2000);
+      if(!loaded){
+        setTimeout(() => {
+          setFade(false)
+        }, 300);
+        setTimeout(() => {
+          setFade(true);
+        }, 1800);
+        setLoaded(true);
+      }
     },[])
     
     return(
@@ -149,7 +185,7 @@ const Home = () => {
                 pose={isVisible ? 'close' : 'open'} 
                 >
                 {/* <SplitText charPoses={charPoses}>Welcome</SplitText> */}
-                <Drag> Pull up a chair! </Drag>
+                <Drag pose={changeP ? 'start' : 'change'} onClick={ () => { randomPhrase() }}> {phrase} </Drag>
                 </WelcomeHolder>
             </Transition>
         </div>

@@ -15,6 +15,7 @@ import {SwipeR} from './components/Contexts/SwipeRContext';
 import {SwipeL} from './components/Contexts/SwipeLContext';
 import {SwipeD} from './components/Contexts/SwipeDContext';
 import {Modal} from './components/Contexts/ModalContext';
+import {FirstLoad} from './components/Contexts/FirstLoad';
 import './App.css';
 
 
@@ -25,6 +26,7 @@ function App() {
     <div className="App">
     <Particles />
     <SwipeR>
+    <FirstLoad>
     <PageName>
       <Modal>
       <SwipeL><SwipeD>
@@ -34,6 +36,7 @@ function App() {
       </SwipeD></SwipeL>
       </Modal>
     </PageName>  
+    </FirstLoad>
     </SwipeR>
   </div>
   );
