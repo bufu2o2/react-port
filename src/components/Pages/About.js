@@ -7,9 +7,13 @@ const About = () => {
 
 
     return (
-        <div className = 'pageTransition'>
+        <div>
             <Swiper swipeLeft='Portfolio' swipeRight='Home'/>
-            <h1>About Page</h1>
+            <div className = 'aboutPage'>
+            <h1 className='pageTitle' style={{fontFamily: 'Reenie Beanie, cursive'}}>Me</h1>
+            <h1 className='pageTitle' style={{fontFamily: 'Megrim, cursive'}}>Me</h1>
+            <h1 className='pageTitle' style={{fontFamily: 'Unkempt, cursive'}}>Me</h1>
+            </div>
         </div>
     )
 }

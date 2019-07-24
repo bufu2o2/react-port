@@ -136,7 +136,7 @@ const Home = () => {
     return(
       <div className = 'pageTransition'>
         <Swiper swipeLeft = 'About' swipeRight = 'Portfolio' />
-            <Transition pose={fade ? 'enter' : 'exit'} className = 'pageTitle'>
+            <Transition pose={fade ? 'enter' : 'exit'} className = 'pageText'>
                 <IntroHolder 
                 className = 'pointerHover' 
                 pose={isVisible ? 'close': 'open'} 
