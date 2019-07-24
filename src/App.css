@@ -1,3 +1,15 @@
+/* fonts ================================================== */
+/* font-family: 'Reenie Beanie', cursive;
+font-family: 'Unkempt', cursive;
+font-family: 'Megrim', cursive;
+font-family: 'Barlow', sans-serif;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Comfortaa', cursive;
+font-family: 'Poiret One', cursive;
+font-family: 'Neucha', cursive; */
+
+
+
 html, body{
   height: 100%;
   width: 100%;
@@ -362,7 +374,7 @@ form {
 }
 
 /* about me ===================================================================== */
-.aboutPage{
+.aboutPage, .portPage{
   display: grid;
   grid-template-columns: 2fr 4fr;
 
@@ -374,9 +386,11 @@ form {
   font-family: 'Megrim', cursive; */
 }
 .pageTitle {
-  grid-column: 1/7;
+  grid-column: 4/7;
   text-align: right;
   margin-right: 5vw;
+  border-bottom: #fff 1px solid;
+  margin-top: 5vh;
 }
 
 

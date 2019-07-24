@@ -149,7 +149,7 @@ const Home = () => {
                 pose={isVisible ? 'close' : 'open'} 
                 >
                 {/* <SplitText charPoses={charPoses}>Welcome</SplitText> */}
-                <Drag> Welcome </Drag>
+                <Drag> Pull up a chair! </Drag>
                 </WelcomeHolder>
             </Transition>
         </div>

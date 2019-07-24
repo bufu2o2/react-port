@@ -12,9 +12,7 @@ const Portfolio = () => {
         <div className = 'pageTransition'>
             <Swiper swipeLeft = 'Home' swipeRight = 'About' />
             <div className = 'portPage'>
-            <h1 className='pageTitle' style={{fontFamily: 'Reenie Beanie, cursive'}}>myWork</h1>
-            <h1 className='pageTitle' style={{fontFamily: 'Megrim, cursive'}}>myWork</h1>
-            <h1 className='pageTitle' style={{fontFamily: 'Unkempt, cursive'}}>myWork</h1>
+            <h1 className='pageTitle' style={{fontFamily: 'Poiret One, cursive'}}>myWork</h1>
             </div>
         </div>
     )
