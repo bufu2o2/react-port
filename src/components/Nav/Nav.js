@@ -166,7 +166,7 @@ const Nav = (props) => {
             </div>
             <Menu menuItems = {menuItems} open={isOpen} onClick={()=>{handleLinkClick();}} />
             <ModalTrans id='modal' pose = {misOpen ? 'enter' : 'down'}>
-              <Modal open={misOpen} component={<ContactForm />} title='Lets Work Together!' />
+              <Modal open={misOpen} component={<ContactForm />} title='Lets Talk!' />
             </ModalTrans>
         </div>
         
