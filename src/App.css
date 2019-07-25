@@ -443,6 +443,47 @@ form {
   margin-top: 5vh;
 }
 
+.container{
+  display: flexbox;
+}
+#aboutPic{
+  text-align: center;
+}
+#aboutPic img {
+  height: 30vh;
+  border: inset 1px grey;
+  margin: 5vw;
+}
+#aboutText{
+  line-height: 1.5;
+  margin: 5vw;
+}
+#aboutMoreContainer{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  line-height: 5vh;
+  width: 10vw;
+  bottom: 0vh;
+  left: calc(50% - 5vw);
+  align-items: center;
+  opacity: .2;
+}
+#aboutMore {
+  transform: rotate(45deg);
+  width: 5vw;
+  height: 5vw;
+  border-width: 0 12px 12px 0;
+}
+#aboutMoreContainer:hover{
+  opacity: 1;
+  transition: opacity .5s ease-in-out
+}
+#aboutMore:hover{
+  opacity: 1;
+  box-shadow: 1px 1px 2px 0px#fff;
+  transition: opacity .5s ease-in-out;
+}
 
 
 
