@@ -4,7 +4,7 @@
   width: 100%;
 }
 
-#particleToggle {
+.particleToggle {
   position: fixed;
   top: 5vh;
   left: 5vw;
@@ -13,12 +13,23 @@
   height: 10px;
   border-radius: 50%;
   z-index: 10;
-  
+  color: white;
   }
-  #particleToggle:hover {
+  .particleToggle:hover {
     cursor: crosshair;
   }
-#particleToggle span{
+.particleToggle {
   color: white;
   margin-left: 2vw;
+}
+.greenToggle::after, .redToggle::after{
+  position: absolute;
+  left: 20px;
+  top: -4px;
+}
+.greenToggle::after{
+  content: 'on';
+}
+.redToggle::after{
+  content: 'off';
 }

@@ -16,7 +16,8 @@ import posed from 'react-pose';
 //Context Import =============================================
 import {MenuContext} from '../Contexts/MenuContext';
 import {ModalContext} from '../Contexts/ModalContext';
-
+import {PageContext} from '../Contexts/PageContext';
+import {SwipeRContext} from '../Contexts/SwipeRContext';
 
 
 //PoseComponent ===============================================
@@ -79,6 +80,8 @@ const Nav = (props) => {
     // const [isOpen, setIsOpen] = useState(false);
     const [isOpen, setIsOpen] = useContext(MenuContext);
     const [misOpen, setMisOpen] = useContext(ModalContext);
+    const [page, setPage] = useContext(PageContext);
+    const [swipeRight, setSwipeRight] = useContext(SwipeRContext);
 
     const handleMenuClick = () => {
       setMisOpen(false);
@@ -145,6 +148,75 @@ const Nav = (props) => {
         setPageLoad(true);
     }, 2000);
 
+    const pageSetterLeft = () => {
+      if(page === 'Home'){
+        return 'Portfolio';
+      } else if(page === 'Portfolio') {
+        return 'About';
+      } else if (page === 'About') {
+        return 'Home';
+      } else {
+        return 'Home';
+      }
+    }
+    const pageSetterRight = () => {
+      if(page === 'Home'){
+        return 'About';
+      } else if(page === 'Portfolio') {
+        return 'Home';
+      } else if (page === 'About') {
+        return 'Portfolio';
+      } else {
+        return 'Home';
+      }
+    }
+
+    const arrowBtns = () => {
+      if(!window.mobilecheck()){
+        return (
+          <div>
+            <div id='leftBtnContainer' onClick={() => { 
+              setTimeout(() => {
+                if(pageSetterLeft() !== 'Contact' && pageSetterLeft() !== page){ setSwipeRight(false)}
+              }, 200);
+              setTimeout(() => {
+                if(pageSetterLeft() === 'Contact'){ setMisOpen(true) }
+                else{
+                  // console.log('setPage set to : ', props.val)
+                  setSwipeRight(true) 
+                  setPage(pageSetterLeft())
+                }
+              }, 800);
+              }}>
+            <i id='leftBtn'  />
+            <div id='leftBtnLabel'>{pageSetterLeft()}</div>
+            </div>
+              
+            <div id='rightBtnContainer' onClick={() => { 
+              setTimeout(() => {
+                if(pageSetterRight() !== 'Contact' && pageSetterRight() !== page){ setSwipeRight(false)}
+              }, 200);
+              setTimeout(() => {
+                if(pageSetterRight() === 'Contact'){ setMisOpen(true) }
+                else{
+                  // console.log('setPage set to : ', props.val)
+                  setSwipeRight(true) 
+                  setPage(pageSetterRight())
+                }
+              }, 800);
+              }} >
+            <i id='rightBtn' />
+            <div id='rightBtnLabel'>{pageSetterRight()}</div>
+              </div>
+              
+          </div>
+       
+      )
+      } else {
+        return(null)
+      }
+    }
+
 
   const menu = ['Home','About','Portfolio','Contact']
   const menuItems = menu.map((val,index)=> {
@@ -153,12 +225,13 @@ const Nav = (props) => {
       <MenuHolder key = {index*3.141592659589}>
       <MenuItem key={index*3.141592659589} val = {val} index = {index} onClick={()=>{handleLinkClick();}} delay = {index * 0.1}>{val}</MenuItem>
       </MenuHolder>
-      )});
+    )});
 
 
 
     return (
         <div>
+          {arrowBtns()}
           <SwipeIntro pose={pageLoad ? 'enter' : 'exit'} id='swipetonav'>Swipe to Navigate</SwipeIntro>
           <div id='socialmedia'><SocialMedia mis={misOpen} /></div>
             <div className='circleBase' id = 'navMenuBtn' style={styles.container}>

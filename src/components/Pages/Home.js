@@ -12,13 +12,15 @@ const IntroHolder = posed.div({
     y: 'calc(100vh * .25)', 
     opacity: 1, 
     delay: 200,
-    filter: 'blur(0px)'
+    filter: 'blur(0px)',
+    display: 'inline-flex'
   },
     'close': { 
     y: 'calc(100vh * .5)',
     opacity: .2, 
     delay: 300,
-    filter: 'blur(0px)'
+    filter: 'blur(0px)',
+    display: 'inline-flex'
   },
   transition: {
     type: 'physics',
@@ -110,7 +112,7 @@ const Transition = posed.div({
       color: 'goldenrod'
     },
     'change': {
-      x: '-100%',
+      x: '-100vw',
       opacity: 0,
       color: '#FF4C3F'
     }
@@ -138,7 +140,7 @@ const Home = () => {
     const [changeP, setChangeP] = useState(true);
     const [loaded, setLoaded] = useContext(FirstLoadContext);
 
-
+    const randNum = x => Math.floor(Math.random() * x);
     const phraseArr  = [
       'pull up a chair',
       'bring the pups',
@@ -149,13 +151,19 @@ const Home = () => {
       "90's music encouraged",
     ]
     const randomPhrase = () =>{
-      setChangeP(false);
-      const randInt = Math.floor(Math.random() * phraseArr.length);
-      setPhrase(phraseArr[randInt]);
-      setTimeout(() => {
-        setChangeP(true);
-      }, 300);
-    }
+      const num = randNum(phraseArr.length);
+      if(phraseArr[num] !== phrase){
+        setChangeP(false);
+        setTimeout(() => {
+          setPhrase(phraseArr[num]);
+        }, 200);
+        
+        setTimeout(() => {
+          setChangeP(true);
+        }, 300);
+      } else {
+        randomPhrase();
+      }}
 
     useEffect( () => { 
       if(!loaded){
@@ -174,14 +182,14 @@ const Home = () => {
         <Swiper swipeLeft = 'About' swipeRight = 'Portfolio' />
             <Transition pose={fade ? 'enter' : 'exit'} className = 'pageText'>
                 <IntroHolder 
-                className = 'pointerHover' 
+                className = 'pointerHover homeText' 
                 pose={isVisible ? 'close': 'open'} 
                 onClick={()=> {setIsVisible(!isVisible)}} 
                 >
                     <Drag><Intro /></Drag> 
                 </IntroHolder>
                 <WelcomeHolder 
-                className = 'pointerHover' 
+                className = 'pointerHover homeText' 
                 pose={isVisible ? 'close' : 'open'} 
                 >
                 {/* <SplitText charPoses={charPoses}>Welcome</SplitText> */}

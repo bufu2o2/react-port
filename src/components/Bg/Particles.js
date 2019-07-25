@@ -54,14 +54,14 @@ const Particles = () => {
     const pToggler = () => {
         if(particles){
             return(
-                <GreenToggle id='particleToggle' onClick={() => {setParticles(!particles)}}>
-                    <span>on</span>
+                <GreenToggle className='particleToggle greenToggle' onClick={() => {setParticles(!particles)}}>
+                    {/* <span>on</span> */}
                 </GreenToggle>
             )
         } else{
             return(
-                <RedToggle id='particleToggle' onClick={() => {setParticles(!particles)}}>
-                    <span>off</span>
+                <RedToggle className='particleToggle redToggle' onClick={() => {setParticles(!particles)}}>
+                    {/* <span>off</span> */}
                 </RedToggle>
             )
         }

@@ -36,7 +36,7 @@ const MenuItem = props => {
       opacity: 1,
       color: hover? '#af1f24':'black',
       transition: 'color 0.2s ease-in-out',
-      animation: '1s slideIn forwards',
+      animation: '.5s slideIn forwards',
       animationDelay: `${props.delay}s`,
 
     },

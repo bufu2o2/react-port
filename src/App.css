@@ -179,6 +179,7 @@ i{
   height: 50px;
   width: 50px;
   display: inline-block;
+  z-index: 500;
 }
 .left {
   position: fixed;
@@ -229,7 +230,56 @@ i{
   text-align: center;
 }
 
+#leftBtnContainer, #rightBtnContainer {
+  position: fixed;
+  top: calc(50% - 25px);
+  z-index: 100;
+  opacity: .2
+}
 
+#leftBtnContainer:hover, #rightBtnContainer:hover {
+  opacity: 1;
+  transition: opacity ease-in-out .4s;
+  cursor: crosshair;
+}
+#leftBtnContainer:active, #rightBtnContainer:active {
+  opacity: .5;
+}
+
+
+#leftBtn:active, #rightBtn:active {
+  box-shadow: 2px 2px 4px 0 #33C3F7;
+}
+
+
+
+#leftBtnContainer {
+  left: 5vw;
+}
+#rightBtnContainer {
+  right: 5vw;
+}
+
+#leftBtn {
+  transform: rotate(135deg);
+  border-color: #33C3F7;
+}
+#rightBtn {
+  transform: rotate(-45deg);
+  border-color: #33C3F7;
+}
+#leftBtnLabel , #rightBtnLabel {
+  top: calc(50% - 25px);
+  color: #33C3F7;
+}
+#leftBtnLabel {
+  left: 5vw;
+  transform: translateY(-35px) translateX(20px);
+}
+#rightBtnLabel {
+  right: 5vw;
+  transform: translateY(-35px) translateX(-20px);
+}
 
 /* contact page ================================================================ */
 #contactf{
@@ -397,6 +447,14 @@ form {
 
 
 
+/* home ================================================================================== */
+.homeText{
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+
+
 @media only screen and (max-width: 400px) {
   #socialmedia {
     top: 10px;
@@ -405,3 +463,6 @@ form {
     display: none;
   }
 }
+
+
+
