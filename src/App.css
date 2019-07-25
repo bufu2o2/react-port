@@ -452,11 +452,11 @@ form {
 #aboutPic img {
   height: 30vh;
   border: inset 1px grey;
-  margin: 5vw;
+  margin: 2vh 6vw 1vh 6vw;
 }
 #aboutText{
   line-height: 1.5;
-  margin: 5vw;
+  margin: 1vh 6vw 2vh 6vw;
 }
 #aboutMoreContainer{
   position: fixed;
@@ -481,11 +481,18 @@ form {
 }
 #aboutMore:hover{
   opacity: 1;
-  box-shadow: 1px 1px 2px 0px#fff;
+  box-shadow: 2px 2px 2px 0px#fff;
   transition: opacity .5s ease-in-out;
 }
-
-
+#aboutMoreContainer:active{
+  opacity: .8;
+  transition: opacity .5s ease-in-out
+}
+#aboutMore:active{
+  opacity: .5;
+  box-shadow: 4px 4px 4px 0px#fff;
+  transition: opacity .5s ease-in-out;
+}
 
 
 /* home ================================================================================== */
