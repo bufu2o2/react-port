@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/react-port/static/css/main.3ab8046e.chunk.css",
-    "main.js": "/react-port/static/js/main.6416a504.chunk.js",
-    "main.js.map": "/react-port/static/js/main.6416a504.chunk.js.map",
+    "main.css": "/react-port/static/css/main.21aaeb1c.chunk.css",
+    "main.js": "/react-port/static/js/main.e771a0db.chunk.js",
+    "main.js.map": "/react-port/static/js/main.e771a0db.chunk.js.map",
     "runtime~main.js": "/react-port/static/js/runtime~main.37cd7200.js",
     "runtime~main.js.map": "/react-port/static/js/runtime~main.37cd7200.js.map",
-    "static/js/2.4125d7c7.chunk.js": "/react-port/static/js/2.4125d7c7.chunk.js",
-    "static/js/2.4125d7c7.chunk.js.map": "/react-port/static/js/2.4125d7c7.chunk.js.map",
+    "static/js/2.f572734b.chunk.js": "/react-port/static/js/2.f572734b.chunk.js",
+    "static/js/2.f572734b.chunk.js.map": "/react-port/static/js/2.f572734b.chunk.js.map",
     "index.html": "/react-port/index.html",
-    "precache-manifest.f9ddcdbd758068c8952c4fddf5bfb771.js": "/react-port/precache-manifest.f9ddcdbd758068c8952c4fddf5bfb771.js",
+    "precache-manifest.d848623de1b891e4402694c08fcae537.js": "/react-port/precache-manifest.d848623de1b891e4402694c08fcae537.js",
     "service-worker.js": "/react-port/service-worker.js",
-    "static/css/main.3ab8046e.chunk.css.map": "/react-port/static/css/main.3ab8046e.chunk.css.map"
+    "static/css/main.21aaeb1c.chunk.css.map": "/react-port/static/css/main.21aaeb1c.chunk.css.map",
+    "static/media/chibiIronman.png": "/react-port/static/media/chibiIronman.406697de.png"
   }
 }
