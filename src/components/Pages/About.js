@@ -18,7 +18,7 @@ const Text = posed.p({
 })
 const Credentials = posed.ul({
     'show': {
-        y: '-35vh',
+        y: '0',
         opacity: 1
     },
     'hide': {
@@ -38,7 +38,7 @@ const About = () => {
             type: 'fas'
         },
         {
-            title: 'George Mason University',
+            title: 'GMU',
             icon: 'graduation-cap',
             type: 'fas'
         },
@@ -112,27 +112,22 @@ const About = () => {
   const listItems = credArr.map( (v,i) => (
             <li key= {i} > 
                 <FontAwesomeIcon id='aboutCredIcon' className='fa' icon={[v.type, v.icon]} />
-                {v.title} 
+                {'   '+v.title} 
             </li>
     ))
 
     const contentSwitcher = () => {
         if(display){
             return (
-                // <Text id='aboutText' pose={display ? 'show' : 'hide' }>
                 <Fragment>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?
                 </Fragment>
-                // {/* </Text> */}
             )
         } else {
             return (
-                // <Credentials id = 'aboutCredentials' pose={display ? 'hide' : 'show' } >
                 <Fragment>
                 {listItems}
                 </Fragment>
-                // {/* </Credentials> */}
-
             )
         }
 
@@ -143,10 +138,7 @@ const About = () => {
         <div>
             <Swiper swipeLeft='Portfolio' swipeRight='Home'/>
             <div id='tempcontainer'>
-            {/* <div className = 'aboutPage'> */}
                 <h1 className='pageTitle' style={{fontFamily: 'Poiret One, cursive'}}>this.Guy</h1>
-            {/* </div> */}
-            {/* <div className='aboutContainer'> */}
                     <div id='aboutPic'><img src={mePic} alt='Iron Man Avatar' /></div>
                     <Text id='aboutText' pose = {display ? 'show' : 'hide' } >
                         {contentSwitcher()}
@@ -158,7 +150,6 @@ const About = () => {
                     <i id='aboutMore' />
                     <div id='aboutMoreLabel'>more</div>
                 </div>
-            {/* </div> */}
             </div>
         </div>
     )
