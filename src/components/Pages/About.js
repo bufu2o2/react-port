@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Fragment, useState} from 'react';
 import Swiper from '../Swipe/Swiper';
 import mePic from '../../img/chibiIronman.png';
 import posed from 'react-pose';
@@ -118,19 +118,24 @@ const About = () => {
 
     const contentSwitcher = () => {
         if(display){
-                return (
-                    <Text id='aboutText' pose={display ? 'show' : 'hide' }>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?
-                    </Text>
-                )
+            return (
+                // <Text id='aboutText' pose={display ? 'show' : 'hide' }>
+                <Fragment>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?
+                </Fragment>
+                // {/* </Text> */}
+            )
         } else {
-                return (
-                    <Credentials id = 'aboutCredentials' pose={display ? 'hide' : 'show' } >
-                    {listItems}
-                    </Credentials>
-                )
+            return (
+                // <Credentials id = 'aboutCredentials' pose={display ? 'hide' : 'show' } >
+                <Fragment>
+                {listItems}
+                </Fragment>
+                // {/* </Credentials> */}
 
+            )
         }
+
     }
 
 
@@ -143,8 +148,12 @@ const About = () => {
             {/* </div> */}
             {/* <div className='aboutContainer'> */}
                     <div id='aboutPic'><img src={mePic} alt='Iron Man Avatar' /></div>
-            {contentSwitcher()}
-
+                    <Text id='aboutText' pose = {display ? 'show' : 'hide' } >
+                        {contentSwitcher()}
+                    </Text>
+                    <Credentials id = 'aboutCredentials' pose={display ? 'hide' : 'show' } >
+                        {contentSwitcher()}
+                    </Credentials>
                 <div id='aboutMoreContainer' onClick={ () => { setdisplay(!display) }} >
                     <i id='aboutMore' />
                     <div id='aboutMoreLabel'>more</div>
