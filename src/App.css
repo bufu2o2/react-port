@@ -435,7 +435,7 @@ form {
   font-family: 'Unkempt', cursive;
   font-family: 'Megrim', cursive; */
 }
-#tempcontainer{
+#aboutContainer{
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-row-gap: 2vh;
@@ -460,16 +460,14 @@ form {
   align-items: center;
 }
 #aboutPic {
-  /* display: block; */
   grid-column: 1/5;
   grid-row: 2;
-  
-  border: inset 3px grey;
   margin: 2vh 6vw 1vh 6vw;
-  border-radius: 10px;
 }
 #aboutPic img {
   height: 25vh;
+  border: inset 3px grey;
+  border-radius: 10px;
 }
 #aboutText, #aboutCredentials{
   /* margin: 1vh 6vw 2vh 6vw; */
@@ -497,10 +495,10 @@ form {
   flex-direction: column;
   line-height: 6vh;
   width: 10vw;
-  bottom: 0vh;
+  bottom: 1vh;
   left: calc(50% - 5vw);
   align-items: center;
-  opacity: .2;
+  opacity: .5;
 }
 #aboutMore {
   transform: rotate(45deg);
