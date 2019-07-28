@@ -32,6 +32,7 @@ img {
     grid-row: 1;
     grid-column: 1/4;
     justify-self: right;
+    margin-bottom: 5vh;
   }
 
 a {

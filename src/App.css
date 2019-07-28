@@ -542,6 +542,7 @@ form {
 
 /* portfolio ======================================================================================== */
 .portPage {
+  position: fixed;
   display: grid;
   grid-template-columns: repeat(3, 26.666vw);
   grid-template-rows: repeat(5, 15vh);
@@ -549,7 +550,7 @@ form {
   grid-column-gap: 5vw;
   justify-items: center;
   align-items: center;
-  margin: 0 5vw;
+  margin: 5vh 5vw;
 }
 
 
