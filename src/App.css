@@ -424,7 +424,7 @@ form {
 }
 
 /* about me ===================================================================== */
-.aboutPage, .portPage{
+.aboutPage{
   display: grid;
   grid-template-columns: 2fr 4fr;
 
@@ -537,6 +537,24 @@ form {
   justify-content: center;
   z-index: 0;
 }
+
+
+
+/* portfolio ======================================================================================== */
+.portPage {
+  display: grid;
+  grid-template-columns: repeat(4 1fr);
+  grid-row-gap: 2vh;
+  justify-items: center;
+  align-items: center;
+  margin: 0 5vw;
+}
+#portTitle{
+  grid-row: 1;
+  grid-column: 1/5;
+}
+
+
 
 
 @media only screen and (max-width: 400px) {
