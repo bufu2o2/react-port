@@ -8,6 +8,7 @@ import MenuButton from './Menu/MenuBtn';
 import Modal from '../Pages/Parts/Modal';
 import ContactForm from '../Pages/Parts/ContactForm';
 import SocialMedia from '../Pages/Parts/SocialMedia';
+import ContactMe from '../Pages/Parts/ContactMe';
 
 //stylesheet =============================================
 import './Menu/Menu.css';
@@ -233,8 +234,11 @@ const Nav = (props) => {
         <div>
           {arrowBtns()}
           <SwipeIntro pose={pageLoad ? 'enter' : 'exit'} id='swipetonav'>Swipe to Navigate</SwipeIntro>
+          
+        <ContactMe />
           <div id='socialmedia'><SocialMedia mis={misOpen} /></div>
-            <div className='circleBase' id = 'navMenuBtn' style={styles.container}>
+          <div className='circleBase' id = 'navMenuBtn' style={styles.container}>
+          
                 <MenuButton open={isOpen} onClick={()=>handleMenuClick()} color='white'/>
             </div>
             <Menu menuItems = {menuItems} open={isOpen} onClick={()=>{handleLinkClick();}} />
