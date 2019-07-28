@@ -30,7 +30,8 @@ img {
 }
 #portTitle{
     grid-row: 1;
-    grid-column: 1/5;
+    grid-column: 1/4;
+    justify-self: right;
   }
 
 a {

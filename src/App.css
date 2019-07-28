@@ -437,16 +437,16 @@ form {
 }
 #aboutContainer{
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 90vw;
   grid-row-gap: 2vh;
   justify-items: center;
   align-items: center;
   margin: 0 5vw;
 }
 .pageTitle {
-  grid-column: 4;
+  grid-column: 1;
   grid-row: 1;
-  text-align: right;
+  justify-self: right;
   /* margin-right: 5vw; */
   border-bottom: #fff 1px solid;
   margin-top: 5vh;
@@ -543,9 +543,10 @@ form {
 /* portfolio ======================================================================================== */
 .portPage {
   display: grid;
-  grid-template-columns: 25vw 25vw 25vw 25vw;
+  grid-template-columns: repeat(3, 26.666vw);
   grid-template-rows: repeat(5, 15vh);
-  grid-row-gap: 2vh;
+  grid-row-gap: 5vh;
+  grid-column-gap: 5vw;
   justify-items: center;
   align-items: center;
   margin: 0 5vw;
