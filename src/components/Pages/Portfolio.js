@@ -13,13 +13,39 @@ const Portfolio = () => {
 
     const portArr = [
         {
-            title: 'Test',
+            title: 'Test0',
             url: '#',
             git: '#',
             img: testavatar,
             summary: 'dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text '
-        }
+        },
+        {
+            title: 'Test1',
+            url: '#',
+            git: '#',
+            img: testavatar,
+            summary: 'dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text '
+        },
+        {
+            title: 'Test2',
+            url: '#',
+            git: '#',
+            img: testavatar,
+            summary: 'dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text '
+        },
     ]
+
+    const portDisplay = portArr.map( (v,i) => (
+        <PortCard 
+        key = {i}
+        num = {i} 
+        img={v.img} 
+        title={v.title} 
+        summary={v.summary} 
+        url={v.url} 
+        git={ v.git } 
+        / >
+    ))
 
 
     return(
@@ -27,10 +53,7 @@ const Portfolio = () => {
             <Swiper swipeLeft = 'Home' swipeRight = 'About' />
             <div className = 'portPage' >
                 <h1 className='pageTitle' id='portTitle' style={{fontFamily: 'Poiret One, cursive'}}>myWork</h1>
-                <PortCard img={portArr[0].img} title={portArr[0].title} summary={portArr[0].summary} url={portArr[0].url} git={ portArr[0].git } ></PortCard>
-
-
-
+                {portDisplay}
             </div>
         </div>
     )

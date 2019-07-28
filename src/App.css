@@ -543,16 +543,14 @@ form {
 /* portfolio ======================================================================================== */
 .portPage {
   display: grid;
-  grid-template-columns: repeat(4 1fr);
+  grid-template-columns: 25vw 25vw 25vw 25vw;
+  grid-template-rows: repeat(5, 15vh);
   grid-row-gap: 2vh;
   justify-items: center;
   align-items: center;
   margin: 0 5vw;
 }
-#portTitle{
-  grid-row: 1;
-  grid-column: 1/5;
-}
+
 
 
 

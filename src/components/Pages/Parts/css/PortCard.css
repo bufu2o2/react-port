@@ -2,6 +2,7 @@
     position: fixed;
     bottom: 10vh;
     left: 0;
+    z-index: 1;
 }
 
 img {
@@ -27,6 +28,10 @@ img {
     background: rgba(0, 0, 0, 0.644);
 
 }
+#portTitle{
+    grid-row: 1;
+    grid-column: 1/5;
+  }
 
 a {
     color: #33C3F7;
@@ -50,10 +55,32 @@ a:active {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
+    scale: .25;
 }
 #appearContainer p {
     grid-column: 1/3;
 }
 p{
     margin: 2vh 0;
+}
+#portClose {
+    position: absolute;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    top: 0vh;
+    right: 1vw;
+    font-size: calc((5vw + 5vh) / 2);
+    font-weight: 800;
+    color: black;
+}
+#portClose:hover{
+    opacity: .8;
+    color: #FF4C3F;
+    cursor: crosshair;
+    z-index: 500;
+}
+#portClose:active{
+    opacity: .9;
+    color: #33C3F7;
 }

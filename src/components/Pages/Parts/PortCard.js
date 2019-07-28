@@ -8,7 +8,7 @@ const BigSmall = posed.div({
     'small': {
         x: 0,
         y: 0,
-        scale: '.25',
+        scale: '1',
         opacity: .8,
         position: 'relative'
     },
@@ -24,20 +24,29 @@ const BigSmall = posed.div({
 
 const PortCard = props => {
     const [cardState, setCardState] = useState(true);
+    const [active, setActive] = useState('all');
 
-    // setTimeout(() => {
-    //     setCardState(false)
-    // }, 2000);
+    console.log('this is the key:  ', props.num)
+    console.log('this is active :  ', active)
 
+    console.log('this is the cardstate   ', cardState)
 
     return (
-        <div id='portCardContainer' style={ cardState ? { position: 'inherit' } : { position: 'fixed' }}>
+        <div 
+        id='portCardContainer' 
+        onClick={cardState ? () => { 
+            setCardState(false); 
+            setActive(props.num)
+            } : null} 
+            style={ active === props.num || 'all' ? (cardState ? { transform: 'scale(.25)', position: 'inherit' } : { transform: 'scale(1)', position: 'fixed', zIndex: 100 }) : (cardState ? { transform: 'scale(.25)', position: 'inherit', pointerEvents: 'none', zIndex: 10 } : { transform: 'scale(1)', position: 'fixed', pointerEvents: 'none', zIndex: 10 })}
+            >
         <BigSmall className='portCard' pose={ cardState ? 'small' : 'large' }>
+            <div id='portClose' onClick={() => { setCardState(true) }} >&times;</div>
             <img src = {props.img} alt={props.title}  />
             <div className='portCardTitle' style={ cardState ? { color: 'goldenrod', bottom: 'calc(50% - 9vh)', fontSize: '18vh' } : { color: 'goldenrod', bottom: '-10vh', fontSize: '10vh' } }>
                 {props.title}
             </div>
-            <div id='appearContainer' style={ cardState ? { display: 'none' } : { display: 'grid'}}>
+            <div id='appearContainer' style={ cardState ? { display: 'none', transform: 'scale(.25)' } : { display: 'grid', transform: 'scale(1)'}}>
                 <p>{ props.summary} </p>
                 <a href={props.url} > Link </a>
                 <a href={props.git} > GitHub </a>
