@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-port/static/css/main.3ce89094.chunk.css",
+    "main.css": "/react-port/static/css/main.2aaf0376.chunk.css",
     "main.js": "/react-port/static/js/main.637e9ba8.chunk.js",
     "main.js.map": "/react-port/static/js/main.637e9ba8.chunk.js.map",
     "runtime~main.js": "/react-port/static/js/runtime~main.37cd7200.js",
@@ -8,9 +8,9 @@
     "static/js/2.a845d824.chunk.js": "/react-port/static/js/2.a845d824.chunk.js",
     "static/js/2.a845d824.chunk.js.map": "/react-port/static/js/2.a845d824.chunk.js.map",
     "index.html": "/react-port/index.html",
-    "precache-manifest.69aa6f719d469175a4b4c6b2f94ff421.js": "/react-port/precache-manifest.69aa6f719d469175a4b4c6b2f94ff421.js",
+    "precache-manifest.17ed0f477b512420f66c9bf7f0b2fa13.js": "/react-port/precache-manifest.17ed0f477b512420f66c9bf7f0b2fa13.js",
     "service-worker.js": "/react-port/service-worker.js",
-    "static/css/main.3ce89094.chunk.css.map": "/react-port/static/css/main.3ce89094.chunk.css.map",
+    "static/css/main.2aaf0376.chunk.css.map": "/react-port/static/css/main.2aaf0376.chunk.css.map",
     "static/media/avatar.png": "/react-port/static/media/avatar.58c8a96f.png",
     "static/media/chibiIronman.png": "/react-port/static/media/chibiIronman.406697de.png"
   }
