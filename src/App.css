@@ -141,6 +141,7 @@ h1{
   height: 100%;
   width: 100%;
   background-color: transparent;
+  /* z-index: 1; */
 }
 .navGuide{
   font-size: 20px;
@@ -499,6 +500,7 @@ form {
   left: calc(50% - 5vw);
   align-items: center;
   opacity: .5;
+  z-index: 20;
 }
 #aboutMore {
   transform: rotate(45deg);
@@ -545,7 +547,7 @@ form {
   position: fixed;
   display: grid;
   grid-template-columns: repeat(3, 26.666vw);
-  grid-template-rows: repeat(5, 15vh);
+  grid-template-rows: 15vh;
   grid-row-gap: 5vh;
   grid-column-gap: 5vw;
   justify-items: center;

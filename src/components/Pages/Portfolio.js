@@ -5,6 +5,7 @@ import PortCard from './Parts/PortCard';
 
 //img imports ===========================================================================
 import testavatar from '../../img/avatar.png'
+import { SwipeR } from '../Contexts/SwipeRContext';
 
 
 
