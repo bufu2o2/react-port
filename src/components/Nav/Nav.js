@@ -101,7 +101,7 @@ const Nav = (props) => {
         float: 'center',
         // textAlign: 'center',
         // left: side ? '' : '10px',
-        zIndex: '99',
+        zIndex: '200',
         opacity: 0.9,
         display:'flex',
         alignItems:'center',

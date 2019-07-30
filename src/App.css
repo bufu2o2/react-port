@@ -544,7 +544,7 @@ form {
 
 /* portfolio ======================================================================================== */
 .portPage {
-  position: fixed;
+  position: absolute;
   display: grid;
   grid-template-columns: repeat(3, 26.666vw);
   grid-template-rows: 15vh;

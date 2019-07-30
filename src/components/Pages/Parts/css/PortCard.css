@@ -1,11 +1,11 @@
 #portCardContainer{
-    /* position: fixed;
-    bottom: 10vh;
+    position: fixed;
+    /* bottom: 10vh;
     left: 100; */
 }
 
 img {
-    height: 40vh;
+    height: 30vh;
     display: block;
 }
 

@@ -53,7 +53,7 @@ const Portfolio = () => {
         <div>
             <Swiper swipeLeft = 'Home' swipeRight = 'About' />
             <div className = 'portPage' >
-                <h1 className='pageTitle' id='portTitle' style={{fontFamily: 'Poiret One, cursive'}}>myWork</h1>
+                <h1 className='pageTitle' id='portTitle' style={{fontFamily: 'Poiret One, cursive'}}>myWork3</h1>
                 {portDisplay}
             </div>
         </div>
