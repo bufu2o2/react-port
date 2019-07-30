@@ -1,7 +1,6 @@
-#portCardContainer{
-    position: fixed;
-    /* bottom: 10vh;
-    left: 100; */
+#portCardContainer:hover{
+    cursor: crosshair;
+    transition: transform 1s ease-in-out;
 }
 
 img {

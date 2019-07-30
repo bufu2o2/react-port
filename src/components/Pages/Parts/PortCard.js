@@ -24,13 +24,7 @@ const BigSmall = posed.div({
 const PortCard = props => {
     const [active, setActive] = useState('all');
     const [isOpen, setIsOpen] = useContext(MenuContext);
-    let zIndexChanger = 20;
-
-    if(isOpen){
-        zIndexChanger = -500;
-    } else{
-        zIndexChanger = 100;
-    }
+    
 
     const stylePicker = () => {
         if((active === 'all') && !isOpen){
@@ -39,7 +33,8 @@ const PortCard = props => {
                     transform: 'scale(.33)',
                     position: 'static',
                     height: '5vh',
-                    zIndex: 20
+                    zIndex: 20,
+                    transition: "transform .25s ease-in-out"
                 }
             )
         } else if((active === 'all') && isOpen){
@@ -62,6 +57,7 @@ const PortCard = props => {
                     zIndex: 100, 
                     top: '0vh', 
                     left: 0,
+                    transition: "transform .25s ease-in-out"
                 }
             )
         } else{
@@ -71,6 +67,12 @@ const PortCard = props => {
                 }
             )
         }
+    }
+
+    const titleFontSize = title => {
+        let x = title.length;
+        let size = 10 / x;
+        return (size+'vh');
     }
 
 
@@ -85,13 +87,13 @@ const PortCard = props => {
         <BigSmall className='portCard' pose={ active === 'all' ? 'small' : 'large' }>
             <div id='portClose' onClick={() => { setActive('all') }} >&times;</div>
             <img src = {props.img} alt={props.title}  />
-            <div className='portCardTitle' style={ active === 'all' ? { color: 'goldenrod', bottom: 'calc(50% - 7vh)', fontSize: '14vh' } : { color: 'goldenrod', bottom: '-8vh', fontSize: '8vh', backgroundColor: 'transparent' } }>
+            <div className='portCardTitle' style={ active === 'all' ? { color: 'goldenrod', bottom: 'calc(50% - 5vh)', fontSize: '10vh' } : { color: 'goldenrod', bottom: '-8vh', fontSize: '8vh', backgroundColor: 'transparent' } }>
                 {props.title}
             </div>
             <div id='appearContainer' style={ active === 'all' ? { display: 'none', transform: 'scale(.33)' } : { display: 'grid', transform: 'scale(1)'}}>
                 <p>{ props.summary} </p>
-                <a href={props.url} > Link </a>
-                <a href={props.git} > GitHub </a>
+                <a href={props.url} target='_blank'> Link </a>
+                <a href={props.git} target='_blank'> GitHub </a>
             </div>
             
         </BigSmall>
