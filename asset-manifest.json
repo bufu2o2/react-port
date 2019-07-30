@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-port/static/css/main.3f154d72.chunk.css",
-    "main.js": "/react-port/static/js/main.a399ca19.chunk.js",
-    "main.js.map": "/react-port/static/js/main.a399ca19.chunk.js.map",
+    "main.js": "/react-port/static/js/main.b0715a5f.chunk.js",
+    "main.js.map": "/react-port/static/js/main.b0715a5f.chunk.js.map",
     "runtime~main.js": "/react-port/static/js/runtime~main.37cd7200.js",
     "runtime~main.js.map": "/react-port/static/js/runtime~main.37cd7200.js.map",
     "static/js/2.a845d824.chunk.js": "/react-port/static/js/2.a845d824.chunk.js",
     "static/js/2.a845d824.chunk.js.map": "/react-port/static/js/2.a845d824.chunk.js.map",
     "index.html": "/react-port/index.html",
-    "precache-manifest.87e4cbf346ae0bdba755051f44868d91.js": "/react-port/precache-manifest.87e4cbf346ae0bdba755051f44868d91.js",
+    "precache-manifest.9c491f2ba5152f3190cf22d1841f17dd.js": "/react-port/precache-manifest.9c491f2ba5152f3190cf22d1841f17dd.js",
     "service-worker.js": "/react-port/service-worker.js",
     "static/css/main.3f154d72.chunk.css.map": "/react-port/static/css/main.3f154d72.chunk.css.map",
     "static/media/avatar.png": "/react-port/static/media/avatar.58c8a96f.png",
