@@ -420,7 +420,7 @@ form {
 }
 #socialmedia {
   position: fixed;
-  top: calc(50% - 120px);
+  bottom: 38vh;
   z-index: 1000;
 }
 
@@ -559,14 +559,31 @@ form {
 
 
 
-@media only screen and (max-width: 400px) {
+
+
+@media only screen and (max-width: 1080px) {
   #socialmedia {
-    top: 10px;
+    bottom: 28vh;
   }
-  #close{
-    display: none;
+  .social {
+    left: -5vw;
   }
 }
 
+@media only screen and (max-width: 812px) {
+  #socialmedia {
+    bottom: 45vh;
+  }
+  .social {
+    left: -3vw;
+  }
+}
 
-
+@media only screen and (max-width: 480px) {
+  #socialmedia {
+    bottom: 32vh;
+  }
+  .social {
+    left: -5vw;
+  }
+}
