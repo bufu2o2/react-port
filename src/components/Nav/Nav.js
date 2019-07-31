@@ -70,7 +70,7 @@ const Nav = (props) => {
       }
     )
     (navigator.userAgent||navigator.vendor||window.opera);
-    console.log('this is the mobile check', check);
+    // console.log('this is the mobile check', check);
     return check;
   };
 
@@ -138,6 +138,14 @@ const Nav = (props) => {
 
     //swipe nav directions on initial load=====================================================================
     const [pageLoad, setPageLoad] = useState(true);
+    //function to add window listener and remove it after click happens ==================================
+    const windowClick = function(e) {
+      if(e){
+        setPageLoad(true);
+        window.removeEventListener('click', windowClick);
+        // console.log('winow click listener removed')
+      }
+    }
     useEffect(() => {
       if(window.mobilecheck()){
         setTimeout(() => {
@@ -146,7 +154,8 @@ const Nav = (props) => {
       }
     }, [])
     setTimeout(() => {
-        setPageLoad(true);
+      //detect click anywhere on window =========================================
+      window.addEventListener('click', windowClick)
     }, 2000);
 
     const pageSetterLeft = () => {

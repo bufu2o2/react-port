@@ -130,7 +130,7 @@ const Home = () => {
       }
     )
     (navigator.userAgent||navigator.vendor||window.opera);
-    console.log('this is the mobile check', check);
+    // console.log('this is the mobile check', check);
     return check;
   };
    

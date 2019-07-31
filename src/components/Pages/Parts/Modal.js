@@ -5,7 +5,7 @@ import {ModalContext} from '../../Contexts/ModalContext';
 const Modal = props => {
     
     const [misOpen, setMisOpen] = useContext(ModalContext);
-    console.log(props.open)
+    // console.log(props.open)
     
 
     return (

@@ -43,7 +43,8 @@ const SocialMedia = props => {
         return(
             <li key={i+v}>
             <a href={v.link} target='_blank' className='btn .social-btns' value={v.name}>
-                <span id='socialspan'></span><FontAwesomeIcon id='fai' className='fa' icon={['fab', v.name]} />
+                {/* <span id='socialspan'></span> */}
+                <FontAwesomeIcon id='fai' className='fa' icon={['fab', v.name]} />
             </a>
             </li>
         )
