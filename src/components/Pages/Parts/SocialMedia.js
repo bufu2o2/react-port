@@ -23,28 +23,32 @@ const SocialMedia = props => {
     const sites = [
         {
             name: 'facebook',
-            link: 'https://www.facebook.com/huangjake'
+            link: 'https://www.facebook.com/huangjake',
+            color: '#3b5998'
         },
         {
             name: 'instagram',
-            link: 'https://www.instagram.com/actionjake/'
+            link: 'https://www.instagram.com/actionjake/',
+            color: '#E56969'
         },
         {
             name: 'linkedin',
-            link: 'https://www.linkedin.com/in/jake-huang-52a8a8b4/'
+            link: 'https://www.linkedin.com/in/jake-huang-52a8a8b4/',
+            color: '#027AB6'
         },
         {
             name: 'github',
-            link: 'https://github.com/bufu2o2/'
+            link: 'https://github.com/bufu2o2/',
+            color: '#161414'
         },
     ]
 
     const socials = sites.map((v,i) => {
         return(
             <li key={i+v}>
-            <a href={v.link} target='_blank' className='btn .social-btns' value={v.name}>
+            <a href={v.link}target='_blank' className='btn .social-btns' value={v.name}>
                 {/* <span id='socialspan'></span> */}
-                <FontAwesomeIcon id='fai' className='fa' icon={['fab', v.name]} />
+                <FontAwesomeIcon  style={{color: v.color}} id='fai' className='fa' icon={['fab', v.name]} />
             </a>
             </li>
         )
