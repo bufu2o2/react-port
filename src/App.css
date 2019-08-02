@@ -503,6 +503,7 @@ form {
 }
 #aboutMore {
   transform: rotate(45deg);
+  color: goldenrod;
   width: 3vw;
   height: 3vw;
   border-width: 0 12px 12px 0;
@@ -513,7 +514,7 @@ form {
 }
 #aboutMore:hover{
   opacity: 1;
-  box-shadow: 2px 2px 2px 0px#fff;
+  /* box-shadow: 2px 2px 2px 0px#fff; */
   transition: opacity .5s ease-in-out;
 }
 #aboutMoreContainer:active{
