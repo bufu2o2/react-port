@@ -48,7 +48,7 @@ const SocialMedia = props => {
             <li key={i+v}>
             <a href={v.link}target='_blank' className='btn .social-btns' value={v.name}>
                 {/* <span id='socialspan'></span> */}
-                <FontAwesomeIcon  style={{color: v.color}} id='fai' className='fa' icon={['fab', v.name]} />
+                <FontAwesomeIcon  style={{color: v.color, border: '2px inset '+v.color}} id='fai' className='fa' icon={['fab', v.name]} />
             </a>
             </li>
         )
