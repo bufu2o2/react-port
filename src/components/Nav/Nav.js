@@ -242,9 +242,9 @@ const Nav = (props) => {
     return (
         <div>
           {arrowBtns()}
-          <SwipeIntro pose={pageLoad ? 'enter' : 'exit'} id='swipetonav'>Swipe to Navigate</SwipeIntro>
+          <SwipeIntro pose={pageLoad ? 'enter' : 'exit'} onClick={ () => { setPageLoad(true) }} id='swipetonav'>Swipe to Navigate</SwipeIntro>
           
-        <ContactMe />
+        <ContactMe style={ isOpen ? {display: 'none'} : null} />
           <div id='socialmedia'><SocialMedia mis={misOpen} /></div>
           <div className='circleBase' id = 'navMenuBtn' style={styles.container}>
           

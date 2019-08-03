@@ -438,10 +438,11 @@ form {
 #aboutContainer{
   display: grid;
   grid-template-columns: 90vw;
-  grid-row-gap: 2vh;
+  grid-row-gap: 1vh;
   justify-items: center;
   align-items: center;
   margin: 0 5vw;
+  z-index: 20;
 }
 .pageTitle {
   grid-column: 1;
@@ -460,9 +461,8 @@ form {
   align-items: center;
 }
 #aboutPic {
-  grid-column: 1/5;
   grid-row: 2;
-  margin: 2vh 6vw 1vh 6vw;
+  margin: calc(( .5vh + 1vw ) / 2) 6vw;
 }
 #aboutPic img {
   height: 25vh;
@@ -474,6 +474,7 @@ form {
 }
 #aboutText{
   grid-row: 3;
+  font-size: calc((3.5vh + 1.5vw) / 2);
   line-height: 1.5;
   grid-column: 1/5;
   align-self: baseline;
@@ -488,15 +489,16 @@ form {
   grid-column: 1/5;
   color: white;
   line-height: 2;
+  font-size: calc(( 1.5vw + 3vh ) / 2);
 }
 #aboutMoreContainer{
   position: fixed;
   display: flex;
   flex-direction: column;
   line-height: 6vh;
-  width: 10vw;
+  width: calc(( 3vw + 5vh) / 2 );
   bottom: 1vh;
-  left: calc(50% - 5vw);
+  left: calc(50% - calc(( 3vw + 5vh) / 4 ));
   align-items: center;
   opacity: .5;
   z-index: 20;

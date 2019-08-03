@@ -136,12 +136,13 @@ const Home = () => {
    
     const [isVisible, setIsVisible] = useState(false);
     const [fade, setFade] = useState(window.mobilecheck() ? true : false);
-    const [phrase, setPhrase] = useState('pull up a chair');
+    const [phrase, setPhrase] = useState('click around a bit');
     const [changeP, setChangeP] = useState(true);
     const [loaded, setLoaded] = useContext(FirstLoadContext);
 
     const randNum = x => Math.floor(Math.random() * x);
     const phraseArr  = [
+      'click around a bit',
       'pull up a chair',
       'bring the pups',
       'pour yourself some tea',

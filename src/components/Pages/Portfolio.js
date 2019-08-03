@@ -17,7 +17,13 @@ const Portfolio = () => {
             url: 'https://timecardstaging.herokuapp.com/login',
             git: 'https://github.com/twistedx/timecard-app',
             img: myTime,
-            summary: 'This is an app created using React Js to keep track of timecards. This is just the MVP of it which is geared towards freelancers, however future iterations will allow you to pick your industry and gear the app towards most types of industries.'
+            summary: `The myTime app was built using the MERN stack to keep track of timecards for freelancers and to give 
+            clients a way to feel more secure with what they are paying. 
+
+            This is the MVP of this app; future iterations will allow you to pick your industry and gear the app towards most types of industries.
+
+            My responsibilities with this project were conceptualization of the app, UI/UX, database set up + manipulation, 
+            and management + organization of team members.`
         },
         {
             title: 'Test1',

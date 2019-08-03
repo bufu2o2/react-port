@@ -1,0 +1,29 @@
+#aboutnav {
+    position: static;
+    top: 10vh;
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+    font-size: calc((3vh + 1vw) / 2);
+}
+#aboutnav div {
+    background-color: rgba(255, 76, 63, 0);
+    opacity: .5;    
+    border-radius: 10px;
+    padding: 1vh 1vw;
+}
+#aboutnav div:hover {
+    background-color: rgb(255, 76, 63, 1);
+    cursor: crosshair;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+}
+#aboutP {
+    margin-top: calc(( 1vw + 1vh ) / 2);
+    background-color: #99999985;
+    border-radius: 10px;
+    border: inset 1px grey;
+    padding: 1vh;
+}
