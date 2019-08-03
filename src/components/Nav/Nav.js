@@ -144,6 +144,8 @@ const Nav = (props) => {
         setPageLoad(true);
         window.removeEventListener('click', windowClick);
         // console.log('winow click listener removed')
+        document.removeEventListener( 'click', windowClick );
+        // console.log('document click listener removed')
       }
     }
     useEffect(() => {
@@ -155,8 +157,19 @@ const Nav = (props) => {
     }, [])
     setTimeout(() => {
       //detect click anywhere on window =========================================
-      window.addEventListener('click', windowClick)
+      window.addEventListener('click', windowClick);
+      document.addEventListener('click', windowClick);
     }, 2000);
+
+
+
+
+
+
+
+
+
+
 
     const pageSetterLeft = () => {
       if(page === 'Home'){
