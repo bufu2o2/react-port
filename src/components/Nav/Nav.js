@@ -9,6 +9,7 @@ import Modal from '../Pages/Parts/Modal';
 import ContactForm from '../Pages/Parts/ContactForm';
 import SocialMedia from '../Pages/Parts/SocialMedia';
 import ContactMe from '../Pages/Parts/ContactMe';
+import Resume from '../Pages/Parts/Resume';
 
 //stylesheet =============================================
 import './Menu/Menu.css';
@@ -258,7 +259,11 @@ const Nav = (props) => {
           <SwipeIntro pose={pageLoad ? 'enter' : 'exit'} onClick={ () => { setPageLoad(true) }} id='swipetonav'>Swipe to Navigate</SwipeIntro>
           
         <ContactMe style={ isOpen ? {display: 'none'} : null} />
-          <div id='socialmedia'><SocialMedia mis={misOpen} /></div>
+          <div id='socialmedia'>
+            <SocialMedia mis={misOpen} />
+            <Resume />
+          </div>
+
           <div className='circleBase' id = 'navMenuBtn' style={styles.container}>
           
                 <MenuButton open={isOpen} onClick={()=>handleMenuClick()} color='white'/>

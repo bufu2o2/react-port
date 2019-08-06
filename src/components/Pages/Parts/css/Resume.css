@@ -1,0 +1,19 @@
+#resume{
+    width: calc((15vh + 15vw) / 2);
+    height: auto;
+    filter: drop-shadow(2px 2px 2px goldenrod) sepia(100%);
+}
+
+#resumeContainer {
+    position: fixed;
+    top: 2vh;
+    right: 2vw;
+    z-index: 1000;
+}
+#resumeContainer:hover {
+    
+}
+#resumeLabel {
+    font-size: calc((4vh + 4vw) / 2);
+    margin-top: 10px;
+}
