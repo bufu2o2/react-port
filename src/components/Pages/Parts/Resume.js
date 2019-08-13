@@ -3,6 +3,7 @@ import {ModalContext} from '../../Contexts/ModalContext';
 import posed from 'react-pose';
 import resumeIcon from '../../../img/resumeW.png';
 import './css/Resume.css';
+import resumePDF from '../../../misc/JakeHuangResume.pdf';
 
 
 const ResumeTrans = posed.div({
@@ -25,7 +26,7 @@ const ResumeTrans = posed.div({
     },
     'hide': {
         x: '100vw',
-        delay: 800,
+        delay: 400,
         opacity: 0
     },
 })
@@ -40,8 +41,10 @@ const Resume = () => {
         pose={ misOpen ? 'show' : 'hide' }
         onClick={ () => { console.log('clicked')}}
         >
-            <img id = 'resume' src = {resumeIcon } />
-            <div id='resumeLabel'> Resume </div>
+            <a href={resumePDF} download>
+                <img id = 'resume' src = {resumeIcon } />
+                <div id='resumeLabel'> Resume </div>
+            </a>
         </ResumeTrans>
     )
 }
