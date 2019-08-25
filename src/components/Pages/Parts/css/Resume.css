@@ -6,8 +6,8 @@
 
 #resumeContainer {
     position: fixed;
-    top: 2vh;
-    right: 2vw;
+    bottom: 2vh;
+    left: 2vw;
     z-index: 1000;
 }
 #resumeContainer:hover {

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import {ModalContext} from '../../Contexts/ModalContext';
 import posed from 'react-pose';
 import resumeIcon from '../../../img/resumeW.png';
@@ -26,19 +26,20 @@ const ResumeTrans = posed.div({
     },
     'hide': {
         x: '100vw',
-        delay: 400,
+        delay: 550,
         opacity: 0
     },
 })
 
 
-const Resume = () => {
+const Resume = props => {
     const [misOpen, setMisOpen] = useContext(ModalContext);
+
 
     return (
         <ResumeTrans 
         id='resumeContainer' 
-        pose={ misOpen ? 'show' : 'hide' }
+        pose={ misOpen ? 'hide' : 'show' }
         onClick={ () => { console.log('clicked')}}
         >
             <a href={resumePDF} download>
